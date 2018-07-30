@@ -1,0 +1,560 @@
+﻿/*控制天气----晴*/
+.im_shenghuo_item_color_sunny{ background-color:#60a3c5;}
+.weather_sunny_width,.weather_rain_width,.weather_neight_width,.weather_snow_width,.weather_cloudy_width,.weather_fog_width{ position:absolute; top:125px;right:0px;width:100%; height:480px; background-color:#60a3c5; border-bottom:#fff solid 1px; margin-bottom:40px; overflow:hidden; z-index:5;}
+.weather_sunny,.weather_snow,.weather_rain,.weather_neight,.weather_cloudy,.weather_fog{position:relative; width:980px; height:480px; margin:0px auto; overflow:hidden; z-index:5;}
+.shatan_width{ position:absolute; width:100%; height:130px; overflow:hidden; margin:0px auto; right:0px;top:350px; z-index:5;}
+.weather_sunny_shatan,.weather_snow_shatan,.weather_rain_shatan,.weather_neight_shatan,.weather_cloudy_shatan,.weather_fog_shatan{ position:relative;width:920px; height:130px; margin:0px auto;}
+.weather_sunny_shatan_content,.weather_rain_shatan_content,.weather_neight_shatan_content,.weather_snow_shatan_content,.weather_cloudy_shatan_content,.weather_fog_shatan_content{ position:absolute; bottom:0px; right:-120px; display:block; width:920px; height:130px; background:url(../images/weather_sunny/shatan.png) 0 0 no-repeat;.animation: active_shatan 1s;-moz-animation: active_shatan 1s;-webkit-animation: active_shatan 1s;-o-animation: active_shatan 1s; z-index:5;}
+
+.weather_sunny_taiyang{position:absolute;width:97px; height:97px; bottom:240px; right:50px; z-index:5;
+.animation: active_taiyang 1s 3.2s ease both;-moz-animation: active_taiyang 1s 3.2s ease both;	-webkit-animation: active_taiyang 1s 3.2s ease both;-o-animation: active_taiyang 1s 3.2s ease both;}
+.weather_sunny_taiyang_content{display:inline-block; width:97px; height:97px; background:url(../images/weather_sunny/taiyang.png) 0 0 no-repeat;/*旋转的太阳在这里调用*/animation:taiyangxuanzhuan 8s infinite Linear;-o-animation:taiyangxuanzhuan 8s infinite Linear;-webkit-animation:taiyangxuanzhuan 8s infinite Linear;-moz-animation:taiyangxuanzhuan 8s infinite Linear;}
+.weather_sunny_dayun{position:absolute;width:72px; height:41px; bottom:180px; right:80px; z-index:5;.animation: active_dayun 1s 2.5s ease both;-moz-animation: active_dayun 1s 2.5s ease both;	-webkit-animation: active_dayun 1s 2.5s ease both;	-o-animation: active_dayun 1s 2.5s ease both;}
+.weather_sunny_dayun_content{ position:absolute; bottom:0px; right:0px;display:block; width:72px; height:41px; background:url(../images/weather_sunny/dayun.png) 0 0 no-repeat;/*飘动大云彩在这里调用*/.animation:youdong_sunnydayun 15s linear 0s infinite;-moz-animation:youdong_sunnydayun 15s linear 0s infinite;-webkit-animation:youdong_sunnydayun 15s linear 0s infinite;-o-animation:youdong_sunnydayun 15s linear 0s infinite;}
+.weather_sunny_xiaoyun{position:absolute;width:49px; height:32px; bottom:160px; right:160px; z-index:5;.animation: active_xiaoyun 1s 2.5s ease both;-moz-animation: active_xiaoyun 1s 2.5s ease both;	-webkit-animation: active_xiaoyun 1s 2.5s ease both;	 -o-animation: active_xiaoyun 1s 2.5s ease both;}
+.weather_sunny_xiaoyun_content{position:absolute; bottom:0px; right:0px;display:block; width:49px; height:32px; background:url(../images/weather_sunny/xiaoyun.png) 0 0 no-repeat;/*飘动小云彩在这里调用*/.animation:youdong_sunnyxiaoyun 10s linear 0s infinite;-moz-animation:youdong_sunnyxiaoyun 10s linear 0s infinite;-webkit-animation:youdong_sunnyxiaoyun 10s linear 0s infinite;-o-animation:youdong_sunnyxiaoyun 10s linear 0s infinite;}
+.weather_sunny_qiqiu{position:absolute;width:51px; height:70px; bottom:150px; right:60px; z-index:5;.animation: active_qiqiu 1s 3s ease both;-moz-animation: active_qiqiu 1s 3s ease both;	-webkit-animation: active_qiqiu 1s 3s ease both;	 -o-animation: active_qiqiu 1s 3s ease both;}
+.weather_sunny_qiqiu_content{ position:absolute; bottom:0px; right:0px;display:block; width:51px; height:70px; background:url(../images/weather_sunny/qiqiu.png) 0 0 no-repeat;/*引用气球移动动画*/.animation:shangxia_qiqiu 5s linear 0s infinite alternate;-moz-animation:shangxia_qiqiu 5s linear 0s infinite;-webkit-animation:shangxia_qiqiu 5s linear 0s infinite alternate;}
+.weather_sunny_dashu{position:absolute;width:61px; height:76px; bottom:106px; right:311px; z-index:8;.animation: active_dashu 0.6s 2s ease both;-moz-animation: active_dashu 0.6s 2s ease both;	-webkit-animation: active_dashu 0.6s 2s ease both;	 -o-animation: active_dashu 0.6s 2s ease both;}
+.weather_sunny_dashu_content{display:inline-block; width:61px; height:76px; background:url(../images/weather_sunny/dashu.png) 0 0 no-repeat;}
+.weather_sunny_xiaoshu{position:absolute;width:46px; height:51px; bottom:110px; right:276px; z-index:8;.animation: active_xiaoshu 1s 2s ease both;-moz-animation: active_xiaoshu 1s 2s ease both;	-webkit-animation: active_xiaoshu 1s 2s ease both;	 -o-animation: active_xiaoshu 1s 2s ease both;}
+.weather_sunny_xiaoshu_content{display:inline-block; width:46px; height:51px; background:url(../images/weather_sunny/xiaoshu.png) 0 0 no-repeat;}
+.weather_sunny_xiong{position:absolute;width:96px; height:144px; bottom:70px; right:380px; z-index:8;.animation: active_sunnyxiong 1s 0.5s ease both;-moz-animation: active_sunnyxiong 1s 0.5s ease both;	-webkit-animation: active_sunnyxiong 1s 0.5s ease both;	 -o-animation: active_sunnyxiong 1s 0.5s ease both;}
+.weather_sunny_xiong_content{display:inline-block; width:96px; height:144px; background:url(../images/weather_sunny/xiong.png) 0 0 no-repeat;}
+.weather_sunny_yingzi{position:absolute;width:96px; height:30px; bottom:70px; right:375px; z-index:7;.animation: active_sunnyyingzi 1s 1s ease both;-moz-animation: active_sunnyyingzi 1s 1s ease both;	-webkit-animation: active_sunnyyingzi 1s 1s ease both;	 -o-animation: active_sunnyyingzi 1s 1s ease both;}
+.weather_sunny_yingzi_content{display:inline-block; width:96px; height:30px; background:url(../images/weather_sunny/yingzi.png) 0 0 no-repeat;}
+.weather_sunny_yugan{position:absolute;width:241px; height:46px; bottom:110px; right:430px; z-index:9;.animation: active_yugan 1s 1.2s ease both;-moz-animation: active_yugan 1s 1.2s ease both;	-webkit-animation: active_yugan 1s 1.2s ease both;	 -o-animation: active_yugan 1s 1.2s ease both;}
+.weather_sunny_yugan_content{display:inline-block; width:241px; height:46px; background:url(../images/weather_sunny/yugan.png) 0 0 no-repeat;}
+.weather_sunny_yugou{position:absolute;width:97px; height:97px; bottom:15px; right:594px; z-index:4;.animation: active_yugou 2s 1.5s ease both;-moz-animation: active_yugou 2s 1.5s ease both;	-webkit-animation: active_yugou 2s 1.5s ease both;	 -o-animation: active_yugou 2s 1.5s ease both;}
+.weather_sunny_yugou_content{display:inline-block; width:97px; height:97px; background:url(../images/weather_sunny/yugou.png) 0 0 no-repeat;}
+.weather_sunny_shuitong{position:absolute;width:28px; height:28px; bottom:70px; right:375px; z-index:8;.animation: active_shuitong 0.5s 1.5s ease both;-moz-animation: active_shuitong 0.5s 1.5s ease both;	-webkit-animation: active_shuitong 0.5s 1.5s ease both;	 -o-animation: active_shuitong 0.5s 1.5s ease both;}
+.weather_sunny_shuitong_content{display:inline-block; width:28px; height:28px; background:url(../images/weather_sunny/shuitong.png) 0 0 no-repeat;}
+.weather_sunny_dayu{position:absolute;width:34px; height:14px; bottom:45px; right:700px; z-index:4;
+.animation: active_liuxing 2s 3s ease both;-moz-animation: active_liuxing 2s 3s ease both;	-webkit-animation: active_liuxing 2s 3s ease both;	 -o-animation: active_liuxing 2s 3s ease both;
+}
+.weather_sunny_dayu_content{ position:absolute; bottom:0px; right:0px;display:block; width:34px; height:14px; background:url(../images/weather_sunny/dayu.png) 0 0 no-repeat;/*引用游动的大鱼动画*/.animation:youdong_dayu 5s 0s linear infinite;-moz-animation:youdong_dayu 5s 0s linear infinite;-webkit-animation:youdong_dayu 5s 0s linear infinite;-o-animation:youdong_dayu 5s 0s linear infinite;}
+.weather_sunny_xiaoyu{position:absolute;width:28px; height:13px; bottom:25px; right:800px; z-index:3;.animation: active_liuxing 2s 4s ease both;-moz-animation: active_liuxing 2s 4s ease both;	-webkit-animation: active_liuxing 2s 4s ease both;	 -o-animation: active_liuxing 2s 4s ease both;}
+.weather_sunny_xiaoyu_content{ position:absolute; bottom:0px; right:0px;display:block; width:28px; height:13px; background:url(../images/weather_sunny/xiaoyu.png) 0 0 no-repeat;/*引用游动的小鱼动画*/.animation:youdong_xiaoyu 4s 0s linear infinite;-moz-animation:youdong_xiaoyu 4s 0s linear infinite;-webkit-animation:youdong_xiaoyu 4s 0s linear infinite;-o-animation:youdong_xiaoyu 4s 0s linear infinite;}
+
+@keyframes active_taiyang{0% {bottom:350px;filter:alpha(opacity=100);}100% {bottom:240px;filter:alpha(opacity=0);}}
+@-moz-keyframes active_taiyang{0% {bottom:350px;-moz-opacity:0;opacity:0;}100% {bottom:240px;-moz-opacity:1;opacity:1;}}
+@-webkit-keyframes active_taiyang {0% {bottom:350px;opacity:0;}100% {bottom:240px;opacity:1;}}
+
+@keyframes active_dayun{0% {bottom:180px; right:0px;filter:alpha(opacity=100);}100% {bottom:180px; right:80px;filter:alpha(opacity=0);}}
+@-moz-keyframes active_dayun {0% {bottom:180px; right:0px;-moz-opacity:0;opacity:0;}100% {bottom:180px; right:80px;-moz-opacity:1;opacity:1;}}
+@-webkit-keyframes active_dayun {0% {bottom:180px; right:0px;opacity:0;}100% {bottom:180px; right:80px;opacity:1;}}
+
+@keyframes active_xiaoyun{0% {right:300px;filter:alpha(opacity=100);}100% {right:160px;filter:alpha(opacity=0);}}
+@-moz-keyframes active_xiaoyun {0% {right:300px;-moz-opacity:0;opacity:0;}100% {right:160px;-moz-opacity:1;opacity:1;}}
+@-webkit-keyframes active_xiaoyun {0% {right:300px;opacity:0;}100% {right:160px;opacity:1;}}
+
+@keyframes active_qiqiu{0% {bottom:50px;filter:alpha(opacity=100);}100% {bottom:150px;filter:alpha(opacity=0);}}
+@-moz-keyframes active_qiqiu {0% {bottom:50px;-moz-opacity:0;opacity:0;}100% {bottom:150px;-moz-opacity:1;opacity:1;}}
+@-webkit-keyframes active_qiqiu {0% {bottom:50px;opacity:0;}100% {bottom:150px;opacity:1;}}
+
+@keyframes active_dashu{0% {bottom:220px;filter:alpha(opacity=100);}100% {bottom:106px;filter:alpha(opacity=0);}}
+@-moz-keyframes active_dashu {0% {bottom:220px;-moz-opacity:0;opacity:0;}100% {bottom:106px;-moz-opacity:1;opacity:1;}}
+@-webkit-keyframes active_dashu {0% {bottom:220px;opacity:0;}100% {bottom:106px;opacity:1;}}
+
+@keyframes active_xiaoshu{0% {bottom:200px;filter:alpha(opacity=100);}100% {bottom:110px;filter:alpha(opacity=0);}}
+@-moz-keyframes active_xiaoshu {0% {bottom:200px;-moz-opacity:0;opacity:0;}100% {bottom:110px;-moz-opacity:1;opacity:1;}}
+@-webkit-keyframes active_xiaoshu {0% {bottom:200px;opacity:0;}100% {bottom:110px;opacity:1;}}
+
+@keyframes active_sunnyxiong{0% {bottom:150px;filter:alpha(opacity=100);}100% {bottom:70px;filter:alpha(opacity=0);}}
+@-moz-keyframes active_sunnyxiong {0% {bottom:150px;-moz-opacity:0;opacity:0;}100% {bottom:70px;-moz-opacity:1;opacity:1;}}
+@-webkit-keyframes active_sunnyxiong {0% {bottom:150px;opacity:0;}100% {bottom:70px;opacity:1;}}
+
+@keyframes active_sunnyyingzi{0% {bottom:40px;opacity:0;}100% {bottom:70px;opacity:1;}}
+@-moz-keyframes active_sunnyyingzi {0% {bottom:40px;-moz-opacity:0;opacity:0;}100% {bottom:70px;-moz-opacity:1;opacity:1;}}
+@-webkit-keyframes active_sunnyyingzi {0% {bottom:40px;opacity:0;}100% {bottom:70px;opacity:1;}}
+
+@keyframes active_yugan{0% {bottom:180px;filter:alpha(opacity=100);}100% {bottom:110px;filter:alpha(opacity=0);}}
+@-moz-keyframes active_yugan {0% {bottom:180px;-moz-opacity:0;opacity:0;}100% {bottom:110px;-moz-opacity:1;opacity:1;}}
+@-webkit-keyframes active_yugan {0% {bottom:180px;opacity:0;}100% {bottom:110px;opacity:1;}}
+
+@keyframes active_yugou{0% {filter:alpha(opacity=100);}100% {filter:alpha(opacity=0);}}
+@-moz-keyframes active_yugou{0% {-moz-opacity:0;opacity:0;}100% {-moz-opacity:1;opacity:1;}}
+@-webkit-keyframes active_yugou {0% {opacity:0;}100% {opacity:1;}}
+
+@keyframes active_shuitong{0% {bottom:150px;filter:alpha(opacity=100);}100% {bottom:70px;filter:alpha(opacity=0);}}
+@-moz-keyframes active_shuitong {0% {bottom:150px;-moz-opacity:0;opacity:0;}100% {bottom:70px;-moz-opacity:1;opacity:1;}}
+@-webkit-keyframes active_shuitong{0% {bottom:150px;opacity:0;}100% {bottom:70px;opacity:1;}}
+/*旋转的太阳*/
+@keyframes taiyangxuanzhuan{0%{} 100%{-webkit-transform:perspective(0px) translate(0px,0px) translateZ(0px) scale(1,1) rotate(360deg)}}
+@-webkit-keyframes taiyangxuanzhuan{0%{} 100%{-webkit-transform:perspective(0px) translate(0px,0px) translateZ(0px) scale(1,1) rotate(360deg)}}
+@-moz-keyframes taiyangxuanzhuan{0%{} 100%{-moz-transform:translate(0px,0px) scale(1,1) skew(0deg) rotate(360deg)}}	
+/*上下动的气球*/
+@keyframes shangxia_qiqiu {0%{ margin-bottom:0px; }20%{ margin-bottom:10px;}80%{ margin-bottom:-10px;}100%{ margin-bottom:0px; }}
+@-webkit-keyframes shangxia_qiqiu {0%{ margin-bottom:0px; }20%{ margin-bottom:10px;}80%{ margin-bottom:-10px;}100%{ margin-bottom:0px; }}
+@-moz-keyframes shangxia_qiqiu {0%{ margin-bottom:0px; }20%{ margin-bottom:10px;}80%{ margin-bottom:-10px;}100%{ margin-bottom:0px; }}
+/*游动的大鱼*/
+@keyframes youdong_dayu{0% { right:170px; opacity: 0;}20% { right:120;opacity: 1;}90% {right:70px; opacity: 1;}100% { right:0px; opacity: 0;}}
+@-moz-keyframes youdong_dayu{0% { right:170px; opacity: 0;}20% { right:120;opacity: 1;}90% {right:70px; opacity: 1;}100% { right:0px; opacity: 0;}}
+@-webkit-keyframes youdong_dayu{0% { right:170px; opacity: 0;}20% { right:120;opacity: 1;}90% {right:70px; opacity: 1;}100% { right:0px; opacity: 0;}}
+/*游动的小鱼*/
+@keyframes youdong_xiaoyu{0% { right:0px; opacity: 0;}20% { right:20px;opacity: 1;}90% {right:100px; opacity: 1;}100% { right:140px; opacity: 0;}}
+@-webkit-keyframes youdong_xiaoyu{0% { right:0px; opacity: 0;}20% { right:20px;opacity: 1;}90% {right:100px; opacity: 1;}100% { right:140px; opacity: 0;}}
+@-moz-keyframes youdong_xiaoyu{0% { right:0px; opacity: 0;}20% { right:20px;opacity: 1;}90% {right:100px; opacity: 1;}100% { right:140px; opacity: 0;}}
+/*飘动大云*/
+@keyframes youdong_sunnydayun{0%{right:0px;}50%{ right:-20px;}100% {right:0px; }}
+@-moz-keyframes youdong_sunnydayun {0%{right:0px;}50%{ right:-20px;}100% {right:0px; }}
+@-webkit-keyframes youdong_sunnydayun  {0%{right:0px;}50%{ right:-20px;}100% {right:0px; }}
+/*飘动小云*/
+@keyframes youdong_sunnyxiaoyun{0%{right:-20px;}50%{ right:20px;}100% {right:0px; }}
+@-moz-keyframes youdong_sunnyxiaoyun {0%{right:-20px;}50%{ right:20px;}100% {right:0px; }}
+@-webkit-keyframes youdong_sunnyxiaoyun  {0%{right:-20px;}50%{ right:20px;}100% {right:0px; }}
+	
+
+
+/*控制天气----雨天*/
+.im_shenghuo_item_color_rain{ background-color:#749899;}
+.weather_rain_width{background-color:#749899;}
+.weather_rain_shatan_content{background:url(../images/weather_rain/shatan.png) 0 0 no-repeat;}
+
+.weather_rain_yu{position:absolute;width:600px; height:500px; bottom:0px; right:0px; z-index:6;.animation: active_xiayu 2s 0.5s ease both;-moz-animation: active_xiayu 2s 0.5s ease both;	-webkit-animation: active_xiayu 2s 0.5s ease both;	 -o-animation: active_xiayu 2s 0.5s ease both;}
+.weather_rain_yu_content{display:inline-block; width:600px; height:520px; background:url(../images/weather_rain/yu_sprite.png) 0 0 no-repeat;.animation:xiayu infinite step-start 200ms;-moz-animation:xiayu infinite step-start 200ms;-webkit-animation:xiayu infinite step-start 200ms;-o-animation:xiayu infinite step-start 200ms;}
+.weather_rain_xiong{position:absolute;width:88px; height:146px; top:270px; right:330px; z-index:8;.animation: active_rainxiong 0.5s 1s ease both;-moz-animation: active_rainxiong 0.5s 1s ease both;	-webkit-animation: active_rainxiong 0.5s 1s ease both;	 -o-animation: active_rainxiong 0.5s 1s ease both;}
+.weather_rain_xiong_content{display:inline-block; width:88px; height:146px; background:url(../images/weather_rain/xiong.png) 0 0 no-repeat;}
+
+.weather_rain_yusan{position:absolute;width:100px; height:100px; top:230px; right:357px; z-index:8;.animation: active_yusan 1s 1.2s ease both;-moz-animation: active_yusan 1s 1.2s ease both;-webkit-animation: active_yusan 1s 1.2s ease both;	 -o-animation: active_yusan 1s 1.2s ease both;}
+.weather_rain_yusan_content{display:inline-block; width:100px; height:100px; background:url(../images/weather_rain/yusan_sprite.png) 0 0 no-repeat;/*雨伞*/.animation:yusan infinite step-start 400ms;-moz-animation:yusan infinite step-start 400ms;-webkit-animation:yusan infinite step-start 400ms;-o-animation:yusan infinite step-start 400ms;}
+
+.weather_rain_yun{position:absolute;width:120px; height:167px; top:150px; right:120px; z-index:8;.animation: active_rainyun 1s 1.5s ease both;-moz-animation: active_rainyun 1s 1.5s ease both;	-webkit-animation: active_rainyun 1s 1.5s ease both;	 -o-animation: active_rainyun 1s 1.5s ease both;}
+.weather_rain_yun_content{display:inline-block; width:120px; height:167px; background:url(../images/weather_rain/yun_sprite.png) 0 0 no-repeat;/*下雨的云*/
+.animation:rainyun infinite step-start 800ms;-moz-animation:rainyun infinite step-start 800ms;-webkit-animation:rainyun infinite step-start 800ms;-o-animation:rainyun infinite step-start 800ms;}
+
+.weather_rain_wuyun{position:absolute;width:130px; height:80px; top:140px; right:10px; z-index:8;.animation: active_rainwuyun 0.6s 1.5s ease both;-moz-animation: active_rainwuyun 0.6s 1.5s ease both;	-webkit-animation: active_rainwuyun 0.6s 1.5s ease both;	 -o-animation: active_rainwuyun 0.6s 1.5s ease both;}
+.weather_rain_wuyun_content{display:inline-block; width:130px; height:80px; background:url(../images/weather_rain/wuyun_sprite.png) 0 0 no-repeat;/*下雨的乌云*/
+.animation:rainwuyun infinite step-start 800ms;-moz-animation:rainwuyun infinite step-start 800ms;-webkit-animation:rainwuyun infinite step-start 800ms;-o-animation:rainwuyun infinite step-start 800ms;}
+
+.weather_rain_shuikeng1{position:absolute;width:102px; height:24px; top:395px; right:318px; z-index:5;.animation: active_shuikeng 2s 3s ease both;-moz-animation: active_shuikeng 2s 3s ease both;	-webkit-animation: active_shuikeng 2s 3s ease both;	 -o-animation: active_shuikeng 2s 3s ease both;}
+.weather_rain_shuikeng1_content{display:inline-block; width:102px; height:24px; background:url(../images/weather_rain/shuikeng1.png) 0 0 no-repeat;}
+.weather_rain_shuikeng2{position:absolute;width:25px; height:24px; top:390px; right:485px; z-index:8;.animation: active_shuikeng 1s 3.5s ease both;-moz-animation: active_shuikeng 1s 3.5s ease both;	-webkit-animation: active_shuikeng 1s 3.5s ease both;	 -o-animation: active_shuikeng 1s 3.5s ease both;}
+.weather_rain_shuikeng2_content{display:inline-block; width:25px; height:24px; background:url(../images/weather_rain/shuikeng2.png) 0 0 no-repeat;}
+.weather_rain_shuikeng3{position:absolute;width:76px; height:24px; top:456px; right:520px; z-index:8;.animation: active_shuikeng 2s 4s ease both;-moz-animation: active_shuikeng 2s 4s ease both;	-webkit-animation: active_shuikeng 2s 4s ease both; -o-animation: active_shuikeng 2s 4s ease both;}
+.weather_rain_shuikeng3_content{display:inline-block; width:76px; height:24px; background:url(../images/weather_rain/shuikeng3.png) 0 0 no-repeat;}
+
+@keyframes active_xiayu{0% {opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-moz-keyframes active_xiayu {0% {opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-webkit-keyframes active_xiayu {0% {opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+
+@keyframes active_rainxiong{0% { top:220px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% { top:270px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-moz-keyframes active_rainxiong {0% { top:220px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% { top:270px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-webkit-keyframes active_rainxiong {0% { top:220px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% { top:270px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+
+@keyframes active_yusan{0% { top:190px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% { top:230px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-moz-keyframes active_yusan {0%{ top:190px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% { top:230px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-webkit-keyframes active_yusan {0%{ top:190px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% { top:230px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+
+@keyframes active_rainwuyun{0%{right:-20px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% { right:10px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-moz-keyframes active_rainwuyun {0% {right:-20px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% { right:10px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-webkit-keyframes active_rainwuyun {0% {right:-20px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% { right:10px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+
+@keyframes active_rainyun{0%{ top:130px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% { top:150px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-moz-keyframes active_rainyun {0% { top:130px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% { top:150px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-webkit-keyframes active_rainyun {0% { top:130px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% { top:150px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+
+@keyframes active_shuikeng{0% {opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-moz-keyframes active_shuikeng {0% {opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-webkit-keyframes active_shuikeng {0% {opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+
+@keyframes xiayu{ 0% { background-position:0px 0px ;}  33.3% { background-position:-600px 0px ;}  100% { background-position:-1200px 0px ;}}
+@-webkit-keyframes xiayu{ 0% { background-position:0px 0px ;}  33.3% { background-position:-600px 0px ;}  100% { background-position:-1200px 0px ;}}
+@-moz-keyframes xiayu{ 0% { background-position:0px 0px ;}  33.3% { background-position:-600px 0px ;}  100% { background-position:-1200px 0px ;}}
+
+@keyframes yusan{ 0% { background-position:0px 0px ;}  33.3% { background-position:-100px 0px ;}  100% { background-position:-200px 0px ;}}
+@-webkit-keyframes yusan{ 0% { background-position:0px 0px ;}  33.3% { background-position:-100px 0px ;}  100% { background-position:-200px 0px ;}}
+@-moz-keyframes yusan{ 0% { background-position:0px 0px ;} 33.3% { background-position:-100px 0px ;}  100% { background-position:-200px 0px ;}}
+
+@keyframes rainyun{ 0% { background-position:0px 0px ;} 20% { background-position:-120px 0px ;}	40% { background-position:-240px 0px ;}	60% { background-position:-360px 0px ;}	80% { background-position:-480px 0px ;}    100% { background-position:-600px 0px ;}}
+@-moz-keyframes rainyun{ 0% { background-position:0px 0px ;} 20% { background-position:-120px 0px ;}	40% { background-position:-240px 0px ;}	60% { background-position:-360px 0px ;}	80% { background-position:-480px 0px ;}    100% { background-position:-600px 0px ;}}
+@-webkit-keyframes rainyun{ 0% { background-position:0px 0px ;} 20% { background-position:-120px 0px ;}	40% { background-position:-240px 0px ;}	60% { background-position:-360px 0px ;}	80% { background-position:-480px 0px ;}    100% { background-position:-600px 0px ;}}
+
+@keyframes rainwuyun{ 0% { background-position:0px 0px ;} 25% { background-position:-130px 0px ;}50% { background-position:-260px 0px ;}75% { background-position:-390px 0px ;}	100% { background-position:-520px 0px ;}}
+@-moz-keyframes rainwuyun{ 0% { background-position:0px 0px ;} 25% { background-position:-130px 0px ;}50% { background-position:-260px 0px ;}75% { background-position:-390px 0px ;}	100% { background-position:-520px 0px ;}}
+@-webkit-keyframes rainwuyun{ 0% { background-position:0px 0px ;} 25% { background-position:-130px 0px ;}50% { background-position:-260px 0px ;}75% { background-position:-390px 0px ;}	100% { background-position:-520px 0px ;}}
+
+
+
+/*控制天气----夜晚*/
+.weather_neight_width{background-color:#4f4747;}
+.im_shenghuo_item_color_neight{ background-color:#4f4747;}
+.weather_neight_shatan_content{ background:url(../images/weather_neight/shatan.png) 0 0 no-repeat;}
+
+.weather_neight_liuxing{ position:absolute;width:304px; height:117px; top:160px; right:235px; z-index:10;.animation: active_liuxing 1s 3s ease both;-moz-animation: active_liuxing 1s 3s ease both;	-webkit-animation: active_liuxing 1s 3s ease both;	 -o-animation: active_liuxing 1s 3s ease both;}
+.weather_neight_liuxing_content{ display:inline-block; width:304px; height:117px; background:url(../images/weather_neight/liuxing.gif) 0 0 no-repeat;}
+.weather_neight_yueliang{ position:absolute;width:213px; height:178px; top:135px; right:0px; z-index:10;.animation: active_liuxing 1s 2.5s ease both;-moz-animation: active_liuxing 1s 2.5s ease both;	-webkit-animation: active_liuxing 1s 2.5s ease both;	 -o-animation: active_liuxing 1s 2.5s ease both;}
+.weather_neight_yueliang_content{ display:inline-block; width:213px; height:178px; background:url(../images/weather_neight/yueliang.gif) 0 0 no-repeat;}
+.weather_neight_zhangpeng{ position:absolute;width:230px; height:142px; bottom:50px; right:320px; z-index:15;.animation: active_zhangpeng 1s 1.5s ease both;-moz-animation: active_zhangpeng 1s 1.5s ease both;	-webkit-animation: active_zhangpeng 1s 1.5s ease both;	 -o-animation: active_zhangpeng 1s 1.5s ease both;}
+.weather_neight_zhangpeng_content{ display:inline-block; width:230px; height:142px; background:url(../images/weather_neight/zhangpeng.png) 0 0 no-repeat;}
+.weather_neight_paiwu{ position:absolute;width:150px; height:150px; bottom:48px; right:80px; z-index:12;.animation: active_liuxing 1s 2s ease both;-moz-animation: active_liuxing 1s 2s ease both;	-webkit-animation: active_liuxing 1s 2s ease both;	 -o-animation: active_liuxing 1s 2s ease both;}
+.weather_neight_paiwu_content{ position:absolute; bottom:0px; right:0px;display:block; width:150px; height:150px; background:url(../images/weather_neight/paiwu.png) 0 0 no-repeat;.animation:dengguang_paiwu infinite step-start 1700ms;-moz-animation:dengguang_paiwu infinite step-start 1700ms;-webkit-animation:dengguang_paiwu infinite step-start 1700ms;-o-animation:dengguang_paiwu infinite step-start 1700ms;}
+.weather_neight_shu{ position:absolute;width:59px; height:73px; bottom:95px; right:500px; z-index:15;.animation: active_shu 0.5s 1s ease both;-moz-animation: active_shu 0.5s  1s ease both;	-webkit-animation: active_shu 0.5s 1s ease both;	 -o-animation: active_shu 0.5s 1s ease both;}
+.weather_neight_shu_content{ display:inline-block; width:59px; height:73px; background:url(../images/weather_neight/shu.png) 0 0 no-repeat;}
+.weather_neight_caoduo{ position:absolute;width:83px; height:48px; bottom:90px; right:270px; z-index:13;.animation: active_caoduo 0.9s  1s ease both;-moz-animation: active_caoduo 0.9s  1s ease both;	-webkit-animation: active_caoduo 0.9s 1s ease both;	 -o-animation: active_caoduo 0.9s 1s ease both;}
+.weather_neight_caoduo_content{ display:inline-block; width:83px; height:48px; background:url(../images/weather_neight/shu.png) 0 0 no-repeat;}
+.weather_neight_z{ position:absolute;width:91px; height:58px; bottom:182px; right:285px; z-index:15;.animation: active_liuxing 1s 4s ease both;-moz-animation: active_liuxing 1s 4s ease both;	-webkit-animation: active_liuxing 1s 4s ease both;	 -o-animation: active_liuxing 1s 4s ease both;}
+.weather_neight_z_content{ display:inline-block; width:91px; height:58px; background:url(../images/weather_neight/z.gif) 0 0 no-repeat;}
+
+
+@keyframes dengguang_paiwu{ 0% { background-position:0px 0px ;} 25% { background-position:-150px 0px ;}50% { background-position:-300px 0px ;}75% { background-position:-450px 0px ;}100% { background-position:-600px 0px ;}}
+@-webkit-keyframes dengguang_paiwu{ 0% { background-position:0px 0px ;} 25% { background-position:-150px 0px ;}50% { background-position:-300px 0px ;}75% { background-position:-450px 0px ;}100% { background-position:-600px 0px ;}}
+@-moz-keyframes dengguang_paiwu{ 0% { background-position:0px 0px ;} 25% { background-position:-150px 0px ;}50% { background-position:-300px 0px ;}75% { background-position:-450px 0px ;}100% { background-position:-600px 0px ;}}
+
+@keyframes active_shatan{0%   {bottom:-140px;}100% {bottom:0px; }}
+@-moz-keyframes active_shatan {0%   {bottom:-140px;}100% {bottom:0px;}}
+@-webkit-keyframes active_shatan  {0%   {bottom:-140px;}100% {bottom:0px;}}
+
+@keyframes active_zhangpeng{0%   {bottom:-200px; right:320px;}100% {bottom:50px; right:320px;}}
+@-moz-keyframes active_zhangpeng{0%   {bottom:-200px; right:320px;}100% {bottom:50px; right:320px;}}
+@-webkit-keyframes active_zhangpeng{0%   {bottom:-200px; right:320px;}100% {bottom:50px; right:320px;}}
+
+@keyframes active_shu{0%   {bottom:95px; right:600px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {bottom:95px; right:500px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-moz-keyframes active_shu{0%   {bottom:95px; right:600px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {bottom:95px; right:500px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-webkit-keyframes active_shu{0%   {bottom:95px; right:600px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {bottom:95px; right:500px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+
+@keyframes active_caoduo{0%   {bottom:90px; right:170px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {bottom:90px; right:270px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-moz-keyframes active_caoduo{0%   {bottom:90px; right:170px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {bottom:90px; right:270px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-webkit-keyframes active_caoduo{0%   {bottom:90px; right:170px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {bottom:90px; right:270px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+
+@keyframes active_liuxing{0%   {opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-moz-keyframes active_liuxing{0%   {opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-webkit-keyframes active_liuxing{0%   {opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+
+
+/*控制天气----雪天*/
+.weather_snow_width{ background-color:#7ebcaf;}
+.im_shenghuo_item_color_snow{ background-color:#7ebcaf;}
+.weather_snow_shatan_content{background:url(../images/weather_snow/shatan.png) 0 0 no-repeat;}
+
+.weather_snow_xiong{ position:absolute; bottom:60px; right:370px; z-index:10;.animation: active_snowxiong 1s 1s ease both;-moz-animation: active_snowxiong 1s 1s ease both;	-webkit-animation: active_snowxiong 1s 1s ease both;	 -o-animation: active_snowxiong 1s 1s ease both;}
+.weather_snow_xiong_content{ display:inline-block; width:153px; height:163px; background:url(../images/weather_snow/snowxiong.png) 0 0 no-repeat;}
+.weather_snow_xiongyingzi{ position:absolute; bottom:60px; right:444px; z-index:10;.animation: active_liuxing 1s 1.5s ease both;-moz-animation: active_liuxing 1s 1.5s ease both;	-webkit-animation: active_liuxing 1s 1.5s ease both;-o-animation: active_liuxing 1s 1.5s ease both;}
+.weather_snow_xiongyingzi_content{ display:inline-block; width:79px; height:43px; background:url(../images/weather_snow/snowxiong_yingzi.png) 0 0 no-repeat;}
+.weather_snow_gouhuo{ position:absolute; bottom:70px; right:320px; z-index:10;.animation: active_gouhuo 1s 1.5s ease both;-moz-animation: active_gouhuo 1s 1.5s ease both;	-webkit-animation: active_gouhuo 1s 1.5s ease both;	 -o-animation: active_gouhuo 1s 1.5s ease both;}
+.weather_snow_gouhuo_content{ display:inline-block; width:100px; height:100px; background:url(../images/weather_snow/gouhuo.png) 0 0 no-repeat;.animation:gouhuo infinite step-start 700ms;-moz-animation:gouhuo infinite step-start 700ms;-webkit-animation:gouhuo infinite step-start 700ms;-o-animation:gouhuo infinite step-start 700ms;}
+.weather_snow_saoba{ position:absolute; bottom:80px; right:155px; z-index:10;.animation: active_saoba 1s 2.3s ease both;-moz-animation: active_saoba 1s 2.3s ease both;	-webkit-animation: active_saoba 1s 2.3s ease both;	 -o-animation: active_saoba 1s 2.3s ease both;}
+.weather_snow_saoba_content{ display:inline-block; width:50px; height:70px; background:url(../images/weather_snow/saoba.png) 0 0 no-repeat;}
+.weather_snow_xueren{ position:absolute; bottom:70px; right:160px; z-index:10;.animation: active_xueren 1s 2s ease both;-moz-animation: active_xueren 1s 2s ease both;	-webkit-animation: active_xueren 1s 2s ease both;	 -o-animation: active_xueren 1s 2s ease both;}
+.weather_snow_xueren_content{ display:inline-block; width:75px; height:90px; background:url(../images/weather_snow/xueren.png) 0 0 no-repeat;}
+.weather_snow_songshu{ position:absolute; bottom:100px; right:265px; z-index:3;.animation: active_songshu 1s 2s ease both;-moz-animation: active_songshu 1s 2s ease both;	-webkit-animation: active_songshu 1s 2s ease both;	 -o-animation: active_songshu 1s 2s ease both;}
+.weather_snow_songshu_content{ display:inline-block; width:50px; height:85px; background:url(../images/weather_snow/songshu.png) 0 0 no-repeat;}
+
+.weather_snow_yun1{ position:absolute; bottom:250px; right:80px;width:130px; height:100px; z-index:10;.animation: active_liuxing 1s 1s ease both;-moz-animation: active_liuxing 1s 2s ease both;	-webkit-animation: active_liuxing 1s 2s ease both;	 -o-animation: active_liuxing 1s 2s ease both;}
+.weather_snow_yun1_content{ position:absolute;display:block; width:130px; height:100px; background:url(../images/weather_snow/snowyun1.png) 0 0 no-repeat;.animation:youdong_snowyun1 3s linear 0s infinite normal;-moz-animation:youdong_snowyun1 3s linear 0s infinite normal;-webkit-animation:youdong_snowyun1 3s linear 0s infinite normal;-o-animation:youdong_snowyun1 3s linear 0s infinite normal;}
+.weather_snow_yun2{ position:absolute; width:100px; height:50px;bottom:270px; right:120px; z-index:3;.animation: active_liuxing 3s 2s ease both;-moz-animation: active_liuxing 3s 2s ease both;	-webkit-animation: active_liuxing 3s 2s ease both; -o-animation: active_liuxing 3s 2s ease both;}
+.weather_snow_yun2_content{ position:absolute; display:block; width:100px; height:50px; background:url(../images/weather_snow/snowyun2.png) 0 0 no-repeat;
+.animation:youdong_snowyun2 10s linear infinite normal;-moz-animation:youdong_snowyun2 10s linear infinite normal;-webkit-animation:youdong_snowyun2 10s linear infinite normal;-o-animation:youdong_snowyun2 10s linear infinite normal;
+}
+.weather_snow_yun3{ position:absolute; bottom:270px; right:0px; width:120px; height:60px;  z-index:3;.animation: active_liuxing 4s 2s ease both;-moz-animation: active_liuxing 4s 2s ease both;	-webkit-animation: active_liuxing 4s 2s ease both;-o-animation: active_liuxing 4s 2s ease both;}
+.weather_snow_yun3_content{ position:absolute; display:block; width:120px; height:60px; background:url(../images/weather_snow/snowyun3.png) 0 0 no-repeat;.animation:youdong_snowyun3 15s linear infinite normal;-moz-animation:youdong_snowyun3 15s linear infinite normal;-webkit-animation:youdong_snowyun3 15s linear infinite normal;-o-animation:youdong_snowyun3 15s linear infinite normal;}
+
+@keyframes gouhuo{ 0% { background-position:0px 0px ;} 25% { background-position:-100px 0px ;}50% { background-position:-200px 0px ;}75% { background-position:-300px 0px ;}100% { background-position:-400px 0px ;}}
+@-webkit-keyframes gouhuo{ 0% { background-position:0px 0px ;} 25% { background-position:-100px 0px ;}50% { background-position:-200px 0px ;}75% { background-position:-300px 0px ;}100% { background-position:-400px 0px ;}}
+@-moz-keyframes gouhuo{ 0% { background-position:0px 0px ;} 25% { background-position:-100px 0px ;}50% { background-position:-200px 0px ;}75% { background-position:-300px 0px ;}100% { background-position:-400px 0px ;}}
+
+@keyframes youdong_snowyun1 {0% { bottom:0px; right:40px; }20% {bottom:-5px; right:40px;}55% { bottom:0px; right:40px;}80% {bottom:5px; right:40px;}100% { bottom:0px; right:40px;}}
+@-moz-keyframes youdong_snowyun1 {0% { bottom:0px; right:40px; }20% {bottom:-5px; right:40px;}55% { bottom:0px; right:40px;}80% {bottom:5px; right:40px;}100% { bottom:0px; right:40px;}}
+@-webkit-keyframes youdong_snowyun1 {0% { bottom:0px; right:40px; }20% {bottom:-5px; right:40px;}55% { bottom:0px; right:40px;}80% {bottom:5px; right:40px;}100% { bottom:0px; right:40px;}}
+/
+@keyframes youdong_snowyun2 {0% { right:50px; opacity: 0.3;}20% { right:100px;opacity: 0.3;}55% { right:150px;opacity: 0.3;}80% {right:100px; opacity: 0.3;}100% { right:50px; opacity: 0.3;}}
+@-moz-keyframes youdong_snowyun2 {0% { right:50px; opacity: 0.3;}20% { right:100px;opacity: 0.3;}55% { right:150px;opacity: 0.3;}80% {right:100px; opacity: 0.3;}100% { right:50px; opacity: 0.3;}}
+@-webkit-keyframes youdong_snowyun2 {0% { right:50px; opacity: 0.3;}20% { right:100px;opacity: 0.3;}55% { right:150px;opacity: 0.3;}80% {right:100px; opacity: 0.3;}100% { right:50px; opacity: 0.3;}}
+
+@keyframes youdong_snowyun3 {0% { right:120px; opacity: 0.5;}20% { right:50px;opacity: 0.5;}55% { right:0px;opacity: 0.5;}80% {right:50px; opacity: 0.5;}100% { right:120px; opacity: 0.5;}}
+@-moz-keyframes youdong_snowyun3 {0% { right:120px; opacity: 0.5;}20% { right:50px;opacity: 0.5;}55% { right:0px;opacity: 0.5;}80% {right:50px; opacity: 0.5;}100% { right:120px; opacity: 0.5;}}
+@-webkit-keyframes youdong_snowyun3 {0% { right:120px; opacity: 0.5;}20% { right:50px;opacity: 0.5;}55% { right:0px;opacity: 0.5;}80% {right:50px; opacity: 0.5;}100% { right:120px; opacity: 0.5;}}
+
+@keyframes active_snowxiong{0%   {bottom:120px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% { bottom:60px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-moz-keyframes active_snowxiong {0%   {bottom:120px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% { bottom:60px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-webkit-keyframes active_snowxiong  {0%   {bottom:120px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% { bottom:60px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+
+@keyframes active_gouhuo{0%   {bottom:30px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% { bottom:70px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-moz-keyframes active_gouhuo {0%   {bottom:30px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% { bottom:70px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-webkit-keyframes active_gouhuo  {0%   {bottom:30px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% { bottom:70px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+
+@keyframes active_xueren{0%   {right:120px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% { right:180px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-moz-keyframes active_xueren {0%   {right:120px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% { right:180px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-webkit-keyframes active_xueren  {0%   {right:120px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% { right:180px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+
+@keyframes active_saoba{0%   {bottom:140px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% { bottom:80px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-moz-keyframes active_saoba {0%   {bottom:140px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% { bottom:80px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-webkit-keyframes active_saoba  {0%   {bottom:140px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% { bottom:80px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+
+@keyframes active_songshu{0%   {bottom:40px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% { bottom:100px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-moz-keyframes active_songshu {0%   {bottom:40px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% { bottom:100px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-webkit-keyframes active_songshu {0%   {bottom:40px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% { bottom:100px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+
+
+.weather_snow_xuehua{ position:absolute; bottom:0px; right:0px; width:650px; height:320px; z-index:10;.animation: active_liuxing 4s 2s ease both;-moz-animation: active_liuxing 4s 2s ease both;	-webkit-animation: active_liuxing 4s 2s ease both;	 -o-animation: active_liuxing 4s 2s ease both;}
+.weather_snow_xuehua_content{ position:absolute; display:block; width:15px; height:15px; background:url(../images/weather_snow/xuehua.png) 0 0 no-repeat;}
+
+.xuehua1,.xuehua2,.xuehua3,.xuehua4,.xuehua5,.xuehua6,.xuehua7,.xuehua8,.xuehua9,.xuehua10,.xuehua11,.xuehua12,.xuehua13,.xuehua14,.xuehua15{ right:15px; bottom:200px; background-size:10px 10px;
+.animation:active_xuehua1 5s linear infinite normal;-moz-animation:active_xuehua1 5s linear infinite normal;-webkit-animation:active_xuehua1 5s linear infinite normal;-o-animation:active_xuehu1 5s linear infinite normal;
+}
+i.xuehua2{ right:80px; bottom:150px;animation-name:active_xuehua2;-moz-animation-name:active_xuehua2;-webkit-animation-name:active_xuehua2;.animation-duration: 9s;-moz-animation-duration: 9s;-webkit-animation-duration: 9s;background-size:15px 15px;opacity:0.6;-moz-opacity:0.6;filter:alpha(opacity=60); }
+i.xuehua3{ right:100px; bottom:300px;animation-name:active_xuehua3;-moz-animation-name:active_xuehua3;-webkit-animation-name:active_xuehua3;}
+i.xuehua4{ right:120px; bottom:190px;animation-name:active_xuehua4;-moz-animation-name:active_xuehua4;-webkit-animation-name:active_xuehua4;background-size:6px 6px;opacity:0.6;-moz-opacity:0.6;filter:alpha(opacity=60); }
+i.xuehua5{ right:180px; bottom:150px;animation-name:active_xuehua5;-moz-animation-name:active_xuehua5;-webkit-animation-name:active_xuehua5;background-size:8px 8px;opacity:0.3;-moz-opacity:0.3;filter:alpha(opacity=30); }
+i.xuehua6{ right:200px; bottom:200px;animation-name:active_xuehua6;-moz-animation-name:active_xuehua6;-webkit-animation-name:active_xuehua6;.animation-duration: 1s;-moz-animation-duration: 1s;-webkit-animation-duration: 1s;}
+i.xuehua7{ right:210px; bottom:230px;animation-name:active_xuehua7;-moz-animation-name:active_xuehua7;-webkit-animation-name:active_xuehua7;.animation-duration: 2s;-moz-animation-duration: 2s;-webkit-animation-duration: 2s;}
+i.xuehua8{ right:265px; bottom:155px;animation-name:active_xuehua8;-moz-animation-name:active_xuehua8;-webkit-animation-name:active_xuehua8;background-size:8px 8px;opacity:0.6;-moz-opacity:0.6;filter:alpha(opacity=60); }
+i.xuehua9{ right:300px; bottom:180px;animation-name:active_xuehua9;-moz-animation-name:active_xuehua9;-webkit-animation-name:active_xuehua9;}
+i.xuehua10{ right:330px; bottom:260px;animation-name:active_xuehua10;-moz-animation-name:active_xuehua10;-webkit-animation-name:active_xuehua10;.animation-duration:4s;-moz-animation-duration:4s;-webkit-animation-duration:4s;}
+i.xuehua11{ right:360px; bottom:250px;animation-name:active_xuehua11;-moz-animation-name:active_xuehua11;-webkit-animation-name:active_xuehua11;-webkit-animation-duration: 6s;background-size:7px 7px;opacity:0.6;-moz-opacity:0.6;filter:alpha(opacity=60); }
+i.xuehua12{ right:380px; bottom:200px;animation-name:active_xuehua12;-moz-animation-name:active_xuehua12;-webkit-animation-name:active_xuehua12;background-size:8px 8px;opacity:0.3;-moz-opacity:0.3;filter:alpha(opacity=30); .animation-duration: 4s;-moz-animation-duration: 4s;-webkit-animation-duration: 4s;}
+i.xuehua13{ right:450px; bottom:90px;animation-name:active_xuehua13;-moz-animation-name:active_xuehua13;-webkit-animation-name:active_xuehua13;background-size:6px 6px;opacity:0.6;-moz-opacity:0.6;filter:alpha(opacity=60); .animation-duration: 10s;-moz-animation-duration: 10s;-webkit-animation-duration: 10s;}
+i.xuehua14{ right:480px; bottom:260px;animation-name:active_xuehua14;-moz-animation-name:active_xuehua14;-webkit-animation-name:active_xuehua14;-webkit-animation-duration: 13s;}
+i.xuehua15{ right:550px; bottom:150px;animation-name:active_xuehua15;-moz-animation-name:active_xuehua15;-webkit-animation-name:active_xuehua15;-webkit-animation-duration: 8s;background-size:15px 15px;}
+
+@keyframes active_xuehua1{0%   {bottom:300px; right:260px;opacity:0.5;-webkit-transform:translate(-12px,50px) rotate(0deg);}50%   {bottom:220px; right:180px;opacity:1;-webkit-transform:translate(-12px,50px) rotate(90deg);}100% {bottom:50px; right:50px;opacity:0.3;-webkit-transform:translate(10px,-10px) rotate(360deg);}}
+@-moz-keyframes active_xuehua1{0%   {bottom:300px; right:260px;opacity:0.5;-webkit-transform:translate(-12px,50px) rotate(0deg);}50%   {bottom:220px; right:180px;opacity:1;-webkit-transform:translate(-12px,50px) rotate(90deg);}100% {bottom:50px; right:50px;opacity:0.3;-webkit-transform:translate(10px,-10px) rotate(360deg);}}
+@-webkit-keyframes active_xuehua1{0%   {bottom:300px; right:260px;opacity:0.5;-webkit-transform:translate(-12px,50px) rotate(0deg);}50%   {bottom:220px; right:180px;opacity:1;-webkit-transform:translate(-12px,50px) rotate(90deg);}100% {bottom:50px; right:50px;opacity:0.3;-webkit-transform:translate(10px,-10px) rotate(360deg);}}
+
+@keyframes active_xuehua2{0%  {bottom:360px; right:130px;opacity:0.5;-webkit-transform:translate(-12px,50px) rotate(0deg);}50%   {bottom:230px; right:140px;opacity:1;-webkit-transform:translate(-12px,50px) rotate(360deg);}100% {bottom:70px; right:150px;opacity:0.3;-webkit-transform:translate(10px,-10px) rotate(750deg);}}
+@-moz-keyframes active_xuehua2{0%   {bottom:360px; right:130px;opacity:0.5;-webkit-transform:translate(-12px,50px) rotate(0deg);}50%   {bottom:230px; right:140px;opacity:1;-webkit-transform:translate(-12px,50px) rotate(360deg);}100% {bottom:70px; right:150px;opacity:0.3;-webkit-transform:translate(10px,-10px) rotate(750deg);}}
+@-webkit-keyframes active_xuehua2{0%   {bottom:360px; right:130px;opacity:0.5;-webkit-transform:translate(-12px,50px) rotate(0deg);}50%   {bottom:230px; right:140px;opacity:1;-webkit-transform:translate(-12px,50px) rotate(360deg);}100% {bottom:70px; right:150px;opacity:0.3;-webkit-transform:translate(10px,-10px) rotate(750deg);}}
+
+@keyframes active_xuehua3{0% {bottom:300px; right:100px;opacity:0;-webkit-transform:translate(-12px,50px) rotate(0deg);}50% {bottom:230px; right:130px;opacity:1;-webkit-transform:translate(0px,50px) rotate(180deg);}
+100% {bottom:100px; right:100px;opacity:0;-webkit-transform:translate(10px,-10px) rotate(360deg);}}
+@-moz-keyframes active_xuehua3{0% {bottom:300px; right:100px;opacity:0;-webkit-transform:translate(-12px,50px) rotate(0deg);}50% {bottom:230px; right:130px;opacity:1;-webkit-transform:translate(0px,50px) rotate(180deg);}
+100% {bottom:100px; right:100px;opacity:0;-webkit-transform:translate(10px,-10px) rotate(360deg);}}
+@-webkit-keyframes active_xuehua3{0% {bottom:300px; right:100px;opacity:0;-webkit-transform:translate(-12px,50px) rotate(0deg);}50% {bottom:230px; right:130px;opacity:1;-webkit-transform:translate(0px,50px) rotate(180deg);}
+100% {bottom:100px; right:100px;opacity:0;-webkit-transform:translate(10px,-10px) rotate(360deg);}}
+
+@keyframes active_xuehua4{0% {bottom:290px; right:120px;opacity:0;-webkit-transform:translate(12px,50px) rotate(0deg);}50% {bottom:150px; right:130px;opacity:1;-webkit-transform:translate(0px,50px) rotate(180deg);}
+100% {bottom:110px; right:120px;opacity:0;-webkit-transform:translate(10px,50px) rotate(360deg);}}
+@-moz-keyframes active_xuehua4{0% {bottom:290px; right:120px;opacity:0;-webkit-transform:translate(12px,50px) rotate(0deg);}50% {bottom:150px; right:130px;opacity:1;-webkit-transform:translate(0px,50px) rotate(180deg);}
+100% {bottom:110px; right:120px;opacity:0;-webkit-transform:translate(10px,50px) rotate(360deg);}}
+@-webkit-keyframes active_xuehua4{0% {bottom:290px; right:120px;opacity:0;-webkit-transform:translate(12px,50px) rotate(0deg);}50% {bottom:150px; right:130px;opacity:1;-webkit-transform:translate(0px,50px) rotate(180deg);}
+100% {bottom:110px; right:120px;opacity:0;-webkit-transform:translate(10px,50px) rotate(360deg);}}
+
+@keyframes active_xuehua5{0% {bottom:250px; right:180px;opacity:0.5;-webkit-transform:translate(12px,50px) rotate(0deg);}100% {bottom:150px; right:180px;opacity:0.3;-webkit-transform:translate(12px,50px) rotate(180deg);}}
+@-moz-keyframes active_xuehua5{0% {bottom:250px; right:180px;opacity:0.5;-webkit-transform:translate(12px,50px) rotate(0deg);}100% {bottom:150px; right:180px;opacity:0.3;-webkit-transform:translate(12px,50px) rotate(180deg);}}
+@-webkit-keyframes active_xuehua5{0%{bottom:250px;right:180px;opacity:0.5;-webkit-transform:translate(12px,50px) rotate(0deg);}100% {bottom:150px;right:180px;opacity:0.3;-webkit-transform:translate(12px,50px) rotate(180deg);}}
+
+@keyframes active_xuehua6{0%{bottom:260px;right:200px;opacity:0.8;-webkit-transform:translate(12px,50px) rotate(0deg);}100% {bottom:220px;right:180px;opacity:0;-webkit-transform:translate(12px,50px) rotate(90deg);}}
+@-moz-keyframes active_xuehua6{0%{bottom:260px;right:200px;opacity:0.8;-webkit-transform:translate(12px,50px) rotate(0deg);}100% {bottom:220px;right:180px;opacity:0;-webkit-transform:translate(12px,50px) rotate(90deg);}}
+@-webkit-keyframes active_xuehua6{0%{bottom:260px;right:200px;opacity:0.8;-webkit-transform:translate(12px,50px) rotate(0deg);}100% {bottom:220px;right:180px;opacity:0;-webkit-transform:translate(12px,50px) rotate(90deg);}}
+
+@keyframes active_xuehua7{0%{bottom:280px; right:180px;opacity:0.8;-webkit-transform:translate(12px,50px) rotate(0deg);}100% {bottom:250px;right:160px;opacity:0;-webkit-transform:translate(12px,50px) rotate(90deg);}}
+@-moz-keyframes active_xuehua7{0%{bottom:280px; right:180px;opacity:0.8;-webkit-transform:translate(12px,50px) rotate(0deg);}100% {bottom:250px;right:160px;opacity:0;-webkit-transform:translate(12px,50px) rotate(90deg);}}
+@-webkit-keyframes active_xuehua7{0%{bottom:280px; right:180px;opacity:0.8;-webkit-transform:translate(12px,50px) rotate(0deg);}100% {bottom:250px;right:160px;opacity:0;-webkit-transform:translate(12px,50px) rotate(90deg);}}
+
+@keyframes active_xuehua8{0%{opacity:0.8;-webkit-transform:rotate(0deg);}50%{opacity:0.5;-webkit-transform:rotate(90deg);}100% {opacity:0;-webkit-transform:rotate(180deg);}}
+@-moz-keyframes active_xuehua8{0%{opacity:0.8;-webkit-transform:rotate(0deg);}50%{opacity:0.5;-webkit-transform:rotate(90deg);}100% {opacity:0;-webkit-transform:rotate(180deg);}}
+@-webkit-keyframes active_xuehua8{0%{opacity:0.8;-webkit-transform:rotate(0deg);}50%{opacity:0.5;-webkit-transform:rotate(90deg);}100% {opacity:0;-webkit-transform:rotate(180deg);}}
+
+@keyframes active_xuehua9{0%{bottom:250px;opacity:0.8;-webkit-transform:rotate(0deg);}50%{bottom:220px;opacity:0.5;-webkit-transform:rotate(90deg);}100% { bottom:190px;opacity:0;-webkit-transform:rotate(180deg);}}
+@-moz-keyframes active_xuehua9{0%{bottom:250px;opacity:0.8;-webkit-transform:rotate(0deg);}50%{bottom:220px;opacity:0.5;-webkit-transform:rotate(90deg);}100% { bottom:190px;opacity:0;-webkit-transform:rotate(180deg);}}
+@-webkit-keyframes active_xuehua9{0%{bottom:250px;opacity:0.8;-webkit-transform:rotate(0deg);}50%{bottom:220px;opacity:0.5;-webkit-transform:rotate(90deg);}100% { bottom:190px;opacity:0;-webkit-transform:rotate(180deg);}}
+
+@keyframes active_xuehua10{0%{ bottom:260px;opacity:0.8;-webkit-transform:rotate(0deg);}50%{bottom:230px;opacity:0.5;-webkit-transform:rotate(90deg);}100% {bottom:230px;opacity:0;-webkit-transform:rotate(180deg);background-size:5px 5px;}}
+@-moz-keyframes active_xuehua10{0%{ bottom:260px;opacity:0.8;-webkit-transform:rotate(0deg);}50%{bottom:230px;opacity:0.5;-webkit-transform:rotate(90deg);}100% {bottom:230px;opacity:0;-webkit-transform:rotate(180deg);background-size:5px 5px;}}
+@-webkit-keyframes active_xuehua10{0%{ bottom:260px;opacity:0.8;-webkit-transform:rotate(0deg);}50%{bottom:230px;opacity:0.5;-webkit-transform:rotate(90deg);}100% {bottom:230px;opacity:0;-webkit-transform:rotate(180deg);background-size:5px 5px;}}
+
+@keyframes active_xuehua11{0%{ bottom:250px;opacity:0.2;background-size:10px 10px;}50%{bottom:220px;opacity:0.8;}100%{bottom:190px;opacity:0;}}
+@-moz-keyframes active_xuehua11{0%{ bottom:250px;opacity:0.2;background-size:10px 10px;}50%{bottom:220px;opacity:0.8;}100%{bottom:190px;opacity:0;}}
+@-webkit-keyframes active_xuehua11{0%{ bottom:250px;opacity:0.2;background-size:10px 10px;}50%{bottom:220px;opacity:0.8;}100%{bottom:190px;opacity:0;}}
+
+@keyframes active_xuehua12{0%{bottom:230px;opacity:0.2;background-size:15px 15px;}50%{bottom:180px;opacity:0.8;}100% {bottom:130px;opacity:0;background-size:5px 5px;}}
+@-moz-keyframes active_xuehua12{0%{bottom:230px;opacity:0.2;background-size:15px 15px;}50%{bottom:180px;opacity:0.8;}100% {bottom:130px;opacity:0;background-size:5px 5px;}}
+@-webkit-keyframes active_xuehua12{0%{bottom:230px;opacity:0.2;background-size:15px 15px;}50%{bottom:180px;opacity:0.8;}100% {bottom:130px;opacity:0;background-size:5px 5px;}}
+
+@keyframes active_xuehua13{0%{ bottom:120px;opacity:0.2; }50%{bottom:90px;opacity:0.8;}100% {bottom:90px;opacity:0;background-size:5px 5px;}}
+@-moz-keyframes active_xuehua13{0%{ bottom:120px;opacity:0.2; }50%{bottom:90px;opacity:0.8;}100% {bottom:90px;opacity:0;background-size:5px 5px;}}
+@-webkit-keyframes active_xuehua13{0%{ bottom:120px;opacity:0.2; }50%{bottom:90px;opacity:0.8;}100% {bottom:90px;opacity:0;background-size:5px 5px;}}
+
+@keyframes active_xuehua14{0%{ bottom:300px;opacity:0.8;-webkit-transform:rotate(0deg); }50% {bottom:200px;opacity:0.5;-webkit-transform:rotate(90deg);}100% {bottom:100px;opacity:0;-webkit-transform:rotate(180deg);background-size:5px 5px;}}
+@-moz-keyframes active_xuehua14{0%{ bottom:300px;opacity:0.8;-webkit-transform:rotate(0deg); }50% {bottom:200px;opacity:0.5;-webkit-transform:rotate(90deg);}100% {bottom:100px;opacity:0;-webkit-transform:rotate(180deg);background-size:5px 5px;}}
+@-webkit-keyframes active_xuehua14{0%{ bottom:300px;opacity:0.8;-webkit-transform:rotate(0deg); }50% {bottom:200px;opacity:0.5;-webkit-transform:rotate(90deg);}100% {bottom:100px;opacity:0;-webkit-transform:rotate(180deg);background-size:5px 5px;}}
+
+@keyframes active_xuehua15{0% { bottom:300px;opacity:0;-webkit-transform:rotate(0deg); background-size:1px 1px;}25% { bottom:250px;opacity:0.8;-webkit-transform:rotate(0deg);}50% { bottom:200px;opacity:0.8;-webkit-transform:rotate(0deg);}75% {bottom:150px;opacity:0.5;-webkit-transform:rotate(90deg);}100% {bottom:100px;opacity:0;-webkit-transform:rotate(180deg);}}
+@-moz-keyframes active_xuehua15{0% { bottom:300px;opacity:0;-webkit-transform:rotate(0deg); background-size:1px 1px;}25% { bottom:250px;opacity:0.8;-webkit-transform:rotate(0deg);}50% { bottom:200px;opacity:0.8;-webkit-transform:rotate(0deg);}75% {bottom:150px;opacity:0.5;-webkit-transform:rotate(90deg);}100% {bottom:100px;opacity:0;-webkit-transform:rotate(180deg);}}
+@-webkit-keyframes active_xuehua15{0% { bottom:300px;opacity:0;-webkit-transform:rotate(0deg); background-size:1px 1px;}25% { bottom:250px;opacity:0.8;-webkit-transform:rotate(0deg);}50% { bottom:200px;opacity:0.8;-webkit-transform:rotate(0deg);}75% {bottom:150px;opacity:0.5;-webkit-transform:rotate(90deg);}100% {bottom:100px;opacity:0;-webkit-transform:rotate(180deg);}}
+
+
+/*控制天气----阴天*/
+.weather_cloudy_width{background-color:#85949c;}
+.im_shenghuo_item_color_cloudy{ background-color:#85949c;}
+.weather_cloudy_shatan_content{ background:url(../images/weather_cloudy/shatan.png) 0 0 no-repeat;}
+
+.weather_cloudy_xiong{ position:absolute; bottom:50px; right:300px;width:150px; height:160px; z-index:10;.animation: active_cloudyxiong 0.5s 1s ease both;-moz-animation: active_cloudyxiong 0.5s 1s ease both;	-webkit-animation: active_cloudyxiong 0.5s 1s ease both;	 -o-animation: active_cloudyxiong 0.5s 1s ease both;}
+.weather_cloudy_xiong_content{ display:inline-block; width:150px; height:160px; background:url(../images/weather_cloudy/cloudyxiong.png) 0 0 no-repeat;}
+.weather_cloudy_shu{ position:absolute; bottom:110px; left:500px; z-index:3;.animation: active_cloudyshu 1s 1.5s ease both;-moz-animation: active_cloudyshu 1s 1.5s ease both;	-webkit-animation: active_cloudyshu 1s 1.5s ease both;	 -o-animation: active_cloudyshu 1s 1.5s ease both;}
+.weather_cloudy_shu_content{ display:inline-block; width:70px; height:100px; background:url(../images/weather_cloudy/cloudyshu.png) 0 0 no-repeat;}
+.weather_cloudy_xiongyingzi{ position:absolute; bottom:47px; right:330px; z-index:10;.animation: active_liuxing 1s 1.5s ease both;-moz-animation: active_liuxing 1s 1.5s ease both;	-webkit-animation: active_liuxing 1s 1.5s ease both;	 -o-animation: active_liuxing 1s 1.5s ease both;}
+.weather_cloudy_xiongyingzi_content{ display:inline-block; width:112px; height:63px; background:url(../images/weather_cloudy/cloudyxiong_yingzi.png) 0 0 no-repeat;}
+.weather_cloudy_shuye1{ position:absolute; bottom:155px; right:490px; z-index:10;.animation: active_liuxing 1s 2s ease both;-moz-animation: active_liuxing 1s 2s ease both;	-webkit-animation: active_liuxing 1s 2s ease both;	 -o-animation: active_liuxing 1s 2s ease both;}
+.weather_cloudy_shuye1_content{ position:absolute; display:block; width:12px; height:13px; background:url(../images/weather_cloudy/shuye.png) 0 0 no-repeat; z-index:15;.animation:piaodong_shuye1 3s linear infinite normal;-moz-animation:piaodong_shuye1 3s linear infinite normal;-webkit-animation:piaodong_shuye1 3s linear infinite normal;-o-animation:piaodong_shuye1 3s linear infinite normal;}
+.weather_cloudy_shuye2{ position:absolute; bottom:165px; right:490px; z-index:5;.animation: active_liuxing 1s 2s ease both;-moz-animation: active_liuxing 1s 2s ease both;	-webkit-animation: active_liuxing 1s 2s ease both;	 -o-animation: active_liuxing 1s 2s ease both;}
+.weather_cloudy_shuye2_content{ position:absolute; display:block; width:12px; height:13px; background:url(../images/weather_cloudy/shuye.png) 0 0 no-repeat;.animation:piaodong_shuye2 8s linear infinite normal;-moz-animation:piaodong_shuye2 8s linear infinite normal;-webkit-animation:piaodong_shuye2 8s linear infinite normal;-o-animation:piaodong_shuye2 8s linear infinite normal;}
+.weather_cloudy_yun1{ position:absolute; bottom:224px; right:20px; z-index:10;.animation: active_liuxing 2s 2s ease both;-moz-animation: active_liuxing 2s 2s ease both;-webkit-animation: active_liuxing 2s 2s ease both;	 -o-animation: active_liuxing 2s 2s ease both;}
+.weather_cloudy_yun1_content{ position:absolute; bottom:0px; right:0px;display:block; width:150px; height:80px; background:url(../images/weather_cloudy/cloudyyun1.png) 0 0 no-repeat;.animation:piaodong_cloudyyun1 15s linear infinite normal;-moz-animation:piaodong_cloudyyun1 15s linear infinite normal;-webkit-animation:piaodong_cloudyyun1 15s linear infinite normal;-o-animation:piaodong_cloudyyun1 15s linear infinite normal;}
+.weather_cloudy_yun2{ position:absolute; bottom:240px; right:120px; z-index:10;.animation: active_liuxing 1s 2s ease both;-moz-animation: active_liuxing 1s 2s ease both;	-webkit-animation: active_liuxing 1s 2s ease both;	 -o-animation: active_liuxing 1s 2s ease both;}
+.weather_cloudy_yun2_content{ position:absolute;bottom:0px; right:0px; display:block; width:150px; height:80px; background:url(../images/weather_cloudy/cloudyyun1.png) 0 0 no-repeat;.animation:piaodong_cloudyyun2 10s linear infinite normal;-moz-animation:piaodong_cloudyyun2 10s linear infinite normal;-webkit-animation:piaodong_cloudyyun2 10s linear infinite normal;-o-animation:piaodong_cloudyyun2 10s linear infinite normal;}
+.weather_cloudy_yun3{ position:absolute; bottom:250px; right:260px; z-index:10;.animation: active_liuxing 3s 2s ease both;-moz-animation: active_liuxing 3s 2s ease both;	-webkit-animation: active_liuxing 3s 2s ease both;	 -o-animation: active_liuxing 3s 2s ease both;}
+.weather_cloudy_yun3_content{ position:absolute;bottom:0px; right:0px; display:block; width:100px; height:60px; background:url(../images/weather_cloudy/cloudyyun3.png) 0 0 no-repeat;.animation:piaodong_cloudyyun3 10s linear infinite normal;-moz-animation:piaodong_cloudyyun3 10s linear infinite normal;-webkit-animation:piaodong_cloudyyun3 10s linear infinite normal;-o-animation:piaodong_cloudyyun3 10s linear infinite normal;}
+.weather_cloudy_yun4{ position:absolute; bottom:250px; right:390px; z-index:10;.animation: active_liuxing 4s 2s ease both;-moz-animation: active_liuxing 4s 2s ease both;	-webkit-animation: active_liuxing 4s 2s ease both;	 -o-animation: active_liuxing 4s 2s ease both;}
+.weather_cloudy_yun4_content{ position:absolute;bottom:0px; right:0px; display:block; width:150px; height:80px; background:url(../images/weather_cloudy/cloudyyun2.png) 0 0 no-repeat;.animation:piaodong_cloudyyun4 20s linear infinite normal;-moz-animation:piaodong_cloudyyun4 20s linear infinite normal;-webkit-animation:piaodong_cloudyyun4 20s linear infinite normal;-o-animation:piaodong_cloudyyun4 20s linear infinite normal;}
+.weather_cloudy_taiyang{ position:absolute; bottom:240px; right:70px; z-index:4;.animation: active_cloudytaiyang 2s 3s ease both;-moz-animation: active_cloudytaiyang 2s 3s ease both;	-webkit-animation: active_cloudytaiyang 2s 3s ease both;	 -o-animation: active_cloudytaiyang 2s 3s ease both;}
+.weather_cloudy_taiyang_content{ display:inline-block; width:150px; height:120px; background:url(../images/weather_cloudy/taiyang.png) 0 0 no-repeat;.animation:cloudytaiyang infinite step-start 1500ms;-moz-animation:cloudytaiyang infinite step-start 1500ms;-webkit-animation:cloudytaiyang infinite step-start 1500ms;-o-animation:cloudytaiyang infinite step-start 1500ms;}
+.weather_cloudy_xiaoniao{ position:absolute; bottom:185px; right:330px; z-index:12;.animation: active_xiaoniao 1s 2s ease both;-moz-animation: active_xiaoniao 1s 2s ease both;	-webkit-animation: active_xiaoniao 1s 2s ease both;	 -o-animation: active_xiaoniao 1s 2s ease both;}
+.weather_cloudy_xiaoniao_content{ display:inline-block; width:60px; height:50px; background:url(../images/weather_cloudy/xiaoniao.png) 0 0 no-repeat;.animation:chishi_xiaoniao infinite step-start 1000ms;-moz-animation:chishi_xiaoniao infinite step-start 1000ms;-webkit-animation:chishi_xiaoniao infinite step-start 1000ms;-o-animation:chishi_xiaoniao infinite step-start 1000ms;}
+
+
+@keyframes chishi_xiaoniao {0% { background-position:0px 0px;}15% {background-position:0px 0px;}35% { background-position:-60px 0px;}45% { background-position:-120px 0px;}55% { background-position:-60px 0px;}60% { background-position:-120px 0px;}90% { background-position:-180px 0px;}100% { background-position:0px 0px;}}
+@-moz-keyframes chishi_xiaoniao {0% { background-position:0px 0px;}15% {background-position:0px 0px;}35% { background-position:-60px 0px;}45% { background-position:-120px 0px;}55% { background-position:-60px 0px;}60% { background-position:-120px 0px;}90% { background-position:-180px 0px;}100% { background-position:0px 0px;}}
+@-webkit-keyframes chishi_xiaoniao {0% { background-position:0px 0px;}15% {background-position:0px 0px;}35% { background-position:-60px 0px;}45% { background-position:-120px 0px;}55% { background-position:-60px 0px;}60% { background-position:-120px 0px;}90% { background-position:-180px 0px;}100% { background-position:0px 0px;}}
+
+@keyframes cloudytaiyang {0% { background-position:0px 0px;}33.3% {background-position:-150px 0px;}66.6% { background-position:-300px 0px;}100% { background-position:-450px 0px;}}
+@-moz-keyframes cloudytaiyang {0% { background-position:0px 0px;}33.3% {background-position:-150px 0px;}66.6% { background-position:-300px 0px;}100% { background-position:-450px 0px;}}
+@-webkit-keyframes cloudytaiyang {0% { background-position:0px 0px;}33.3% {background-position:-150px 0px;}66.6% { background-position:-300px 0px;}100% { background-position:-450px 0px;}}
+
+@keyframes piaodong_cloudyyun1{0%{ bottom:0px; right:0px;opacity:1;-webkit-transform:rotate(0deg);}25%{bottom:5px;right:-20px;opacity:1;-webkit-transform:rotate(5deg);}50%{bottom:0px;right:0px;opacity:1;-webkit-transform:rotate(0deg);}75%{bottom:-5px;right:50px;opacity:1;-webkit-transform:rotate(5deg);}100% {bottom:0px;right:0px;opacity:1;-webkit-transform:rotate(0deg);}}
+@-moz-keyframes piaodong_cloudyyun1{0%{ bottom:0px; right:0px;opacity:1;-webkit-transform:rotate(0deg);}25%{bottom:5px;right:-20px;opacity:1;-webkit-transform:rotate(5deg);}50%{bottom:0px;right:0px;opacity:1;-webkit-transform:rotate(0deg);}75%{bottom:-5px;right:50px;opacity:1;-webkit-transform:rotate(5deg);}100% {bottom:0px;right:0px;opacity:1;-webkit-transform:rotate(0deg);}}
+@-webkit-keyframes piaodong_cloudyyun1{0%{ bottom:0px; right:0px;opacity:1;-webkit-transform:rotate(0deg);}25%{bottom:5px;right:-20px;opacity:1;-webkit-transform:rotate(5deg);}50%{bottom:0px;right:0px;opacity:1;-webkit-transform:rotate(0deg);}75%{bottom:-5px;right:50px;opacity:1;-webkit-transform:rotate(5deg);}100% {bottom:0px;right:0px;opacity:1;-webkit-transform:rotate(0deg);}}
+
+@keyframes piaodong_cloudyyun2{0%{ bottom:0px; right:0px;opacity:1;-webkit-transform:rotate(0deg);}25%{bottom:5px;right:10px;opacity:1;-webkit-transform:rotate(5deg);}50%{bottom:0px;right:0px;opacity:1;-webkit-transform:rotate(0deg);}75%{bottom:-5px;right:10px;opacity:1;-webkit-transform:rotate(5deg);}100%{bottom:0px;right:0px;opacity:1;-webkit-transform:rotate(0deg);}}
+@-moz-keyframes piaodong_cloudyyun2{0%{ bottom:0px; right:0px;opacity:1;-webkit-transform:rotate(0deg);}25%{bottom:5px;right:10px;opacity:1;-webkit-transform:rotate(5deg);}50%{bottom:0px;right:0px;opacity:1;-webkit-transform:rotate(0deg);}75%{bottom:-5px;right:10px;opacity:1;-webkit-transform:rotate(5deg);}100%{bottom:0px;right:0px;opacity:1;-webkit-transform:rotate(0deg);}}
+@-webkit-keyframes piaodong_cloudyyun2{0%{ bottom:0px; right:0px;opacity:1;-webkit-transform:rotate(0deg);}25%{bottom:5px;right:10px;opacity:1;-webkit-transform:rotate(5deg);}50%{bottom:0px;right:0px;opacity:1;-webkit-transform:rotate(0deg);}75%{bottom:-5px;right:10px;opacity:1;-webkit-transform:rotate(5deg);}100%{bottom:0px;right:0px;opacity:1;-webkit-transform:rotate(0deg);}}
+
+@keyframes piaodong_cloudyyun3{0%{ bottom:0px; right:0px;opacity:1;-webkit-transform:rotate(0deg);}25%{bottom:5px;right:50px;opacity:0.5;-webkit-transform:rotate(3deg);}50%{bottom:0px;right:0px;opacity:1;-webkit-transform:rotate(0deg);}75%{bottom:-5px;right:50px;opacity:0.5;-webkit-transform:rotate(3deg);}100% {bottom:0px;right:0px;opacity:1;-webkit-transform:rotate(0deg);}}
+@-moz-keyframes piaodong_cloudyyun3{0%{ bottom:0px; right:0px;opacity:1;-webkit-transform:rotate(0deg);}25%{bottom:5px;right:50px;opacity:0.5;-webkit-transform:rotate(3deg);}50%{bottom:0px;right:0px;opacity:1;-webkit-transform:rotate(0deg);}75%{bottom:-5px;right:50px;opacity:0.5;-webkit-transform:rotate(3deg);}100% {bottom:0px;right:0px;opacity:1;-webkit-transform:rotate(0deg);}}
+@-webkit-keyframes piaodong_cloudyyun3{0%{ bottom:0px; right:0px;opacity:1;-webkit-transform:rotate(0deg);}25%{bottom:5px;right:50px;opacity:0.5;-webkit-transform:rotate(3deg);}50%{bottom:0px;right:0px;opacity:1;-webkit-transform:rotate(0deg);}75%{bottom:-5px;right:50px;opacity:0.5;-webkit-transform:rotate(3deg);}100% {bottom:0px;right:0px;opacity:1;-webkit-transform:rotate(0deg);}}
+
+@keyframes piaodong_cloudyyun4{0%{ bottom:0px; right:0px;opacity:1;-webkit-transform:rotate(0deg);}25%{bottom:5px;right:40px;opacity:0.8;-webkit-transform:rotate(10deg);}50%{bottom:0px;right:0px;opacity:1;-webkit-transform:rotate(0deg);}75%{bottom:-5px;right:40px;opacity:0.8;-webkit-transform:rotate(10deg);}100% {bottom:0px;right:0px;opacity:1;-webkit-transform:rotate(0deg);}}
+@-moz-keyframes piaodong_cloudyyun4{0%{ bottom:0px; right:0px;opacity:1;-webkit-transform:rotate(0deg);}25%{bottom:5px;right:40px;opacity:0.8;-webkit-transform:rotate(10deg);}50%{bottom:0px;right:0px;opacity:1;-webkit-transform:rotate(0deg);}75%{bottom:-5px;right:40px;opacity:0.8;-webkit-transform:rotate(10deg);}100% {bottom:0px;right:0px;opacity:1;-webkit-transform:rotate(0deg);}}
+@-webkit-keyframes piaodong_cloudyyun4{0%{ bottom:0px; right:0px;opacity:1;-webkit-transform:rotate(0deg);}25%{bottom:5px;right:40px;opacity:0.8;-webkit-transform:rotate(10deg);}50%{bottom:0px;right:0px;opacity:1;-webkit-transform:rotate(0deg);}75%{bottom:-5px;right:40px;opacity:0.8;-webkit-transform:rotate(10deg);}100% {bottom:0px;right:0px;opacity:1;-webkit-transform:rotate(0deg);}}
+
+@keyframes piaodong_shuye1{0%{ bottom:20px; right:-50px;opacity:1;-webkit-transform:rotate(0deg); }50%{bottom:-50px;right:50px;opacity:1;-webkit-transform:rotate(180deg);}100% {bottom:-100px;right:100px;opacity:0.2;-webkit-transform:rotate(360deg);}}
+@-moz-keyframes piaodong_shuye1{0%{ bottom:20px; right:-50px;opacity:1;-webkit-transform:rotate(0deg); }50%{bottom:-50px;right:50px;opacity:1;-webkit-transform:rotate(180deg);}100% {bottom:-100px;right:100px;opacity:0.2;-webkit-transform:rotate(360deg);}}
+@-webkit-keyframes piaodong_shuye1{0%{ bottom:20px; right:-50px;opacity:1;-webkit-transform:rotate(0deg); }50%{bottom:-50px;right:50px;opacity:1;-webkit-transform:rotate(180deg);}100% {bottom:-100px;right:100px;opacity:0.2;-webkit-transform:rotate(360deg);}}
+
+@keyframes piaodong_shuye2{0%{ bottom:0px; right:-50px;opacity:1;-webkit-transform:rotate(0deg); }50% {bottom:-20px;right:50px;opacity:1;-webkit-transform:rotate(90deg);}100% {bottom:-70px;right:100px;opacity:0.2;-webkit-transform:rotate(180deg);}}
+@-moz-keyframes piaodong_shuye2{0%{ bottom:0px; right:-50px;opacity:1;-webkit-transform:rotate(0deg); }50% {bottom:-20px;right:50px;opacity:1;-webkit-transform:rotate(90deg);}100% {bottom:-70px;right:100px;opacity:0.2;-webkit-transform:rotate(180deg);}}
+@-webkit-keyframes piaodong_shuye2{0%{ bottom:0px; right:-50px;opacity:1;-webkit-transform:rotate(0deg); }50% {bottom:-20px;right:50px;opacity:1;-webkit-transform:rotate(90deg);}100% {bottom:-70px;right:100px;opacity:0.2;-webkit-transform:rotate(180deg);}}
+
+@keyframes active_cloudyxiong{0% { bottom:100px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {bottom:50px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-moz-keyframes active_cloudyxiong {0% { bottom:100px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {bottom:50px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-webkit-keyframes active_cloudyxiong {0%{ bottom:100px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {bottom:50px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+
+@keyframes active_cloudyshu{0% { bottom:50px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {bottom:110px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-moz-keyframes active_cloudyshu {0% { bottom:50px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {bottom:110px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-webkit-keyframes active_cloudyshu {0% { bottom:50px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {bottom:110px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+
+@keyframes active_xiaoniao{0% { bottom:220px;right:280px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {bottom:181px; right:330px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-moz-keyframes active_xiaoniao {0% { bottom:220px;right:280px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {bottom:181px;right:330px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-webkit-keyframes active_xiaoniao {0% { bottom:220px;right:280px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {bottom:181px;right:330px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+
+@keyframes active_cloudytaiyang{0% { bottom:230px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {bottom:240px; opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-moz-keyframes active_cloudytaiyang {0% { bottom:230px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {bottom:240px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-webkit-keyframes active_cloudytaiyang {0% { bottom:230px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {bottom:240px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+
+
+/*控制天气----雾霾*/
+.weather_fog_width{ background-color:#bda179;}
+.im_shenghuo_item_color_fog{ background-color:#bda179;}
+.weather_fog_shatan_content{ pbackground:url(../images/weather_fog/shatan.png) 0 0 no-repeat;}
+
+.weather_fog_fogleft{ position:absolute; bottom:50px; right:205px; z-index:12;.animation: active_fogleft 2s 0.5s ease both;-moz-animation: active_fogleft 2s 0.5s ease both;-webkit-animation: active_fogleft 2s 0.5s ease both;-o-animation: active_fogleft 2s 0.5s ease both;}
+.weather_fog_fogleft_content{ position:absolute; bottom:0px; right:0px;display:block; width:440px; height:147px; background:url(../images/weather_fog/leftfog.png) 0 0 no-repeat;.animation:piaodong_fogleft 20s linear infinite normal;-moz-animation:piaodong_fogleft 20s linear infinite normal;-webkit-animation:piaodong_fogleft 20s linear infinite normal;-o-animation:piaodong_fogleft 20s linear infinite normal;}
+.weather_fog_fogright{ position:absolute; bottom:20px; right:20px; z-index:7;.animation: active_fogright 3s 0.8s ease both;-moz-animation: active_fogright 3s 0.8s ease both;	-webkit-animation: active_fogright 3s 0.8s ease both;	 -o-animation: active_fogright 3s 0.8s ease both;}
+.weather_fog_fogright_content{ position:absolute; bottom:0px; right:0px;display:block; width:500px; height:250px; background:url(../images/weather_fog/rightfog.png) 0 0 no-repeat;.animation:piaodong_fogright 20s linear infinite normal;-moz-animation:piaodong_fogright 20s linear infinite normal;-webkit-animation:piaodong_fogright 20s linear infinite normal;-o-animation:piaodong_fogright 20s linear infinite normal;}
+.weather_fog_xiong{ position:absolute; bottom:70px; right:350px; z-index:10;.animation: active_liuxing 2s 1s ease both;-moz-animation: active_liuxing 2s 1s ease both;	-webkit-animation: active_liuxing 2s 1s ease both;	 -o-animation: active_liuxing 2s 1s ease both;}
+.weather_fog_xiong_content{ display:inline-block; width:130px; height:150px; background:url(../images/weather_fog/fogxiong.png) 0 0 no-repeat;}
+.weather_fog_xiongyingzi{ position:absolute; bottom:70px; right:370px; z-index:6;.animation: active_liuxing 0.5s 1.5s ease both;-moz-animation: active_liuxing 0.5s 1.5s ease both;	-webkit-animation: active_liuxing 0.5s 1.5s ease both;	 -o-animation: active_liuxing 0.5s 1.5s ease both;}
+.weather_fog_xiongyingzi_content{ display:inline-block; width:101px; height:24px; background:url(../images/weather_fog/fogxiong_yingzi.png) 0 0 no-repeat;}
+.weather_fog_hongqi{ position:absolute; bottom:170px; right:338px; z-index:10;.animation: active_liuxing 0.5s 1.5s ease both;-moz-animation: active_liuxing 0.5s 1.5s ease both;	-webkit-animation: active_liuxing 0.5s 1.5s ease both;	 -o-animation: active_liuxing 0.5s 1.5s ease both;}
+.weather_fog_hongqi_content{ display:inline-block; width:50px; height:50px; background:url(../images/weather_fog/hongqi.png) 0 0 no-repeat;.animation:yaodong_hongqi infinite step-start 1000ms;-moz-animation:yaodong_hongqi infinite step-start 1000ms;-webkit-animation:yaodong_hongqi infinite step-start 1000ms;-o-animation:yaodong_hongqi infinite step-start 1000ms;}
+.weather_fog_dengta{ position:absolute; bottom:70px; right:150px; z-index:10;.animation: active_dengta 1s 2s ease both;-moz-animation: active_dengta 1s 2s ease both;	-webkit-animation: active_dengta 1s 2s ease both;	 -o-animation: active_dengta 1s 2s ease both;}
+.weather_fog_dengta_content{ display:inline-block; width:70px; height:120px; background:url(../images/weather_fog/dengta.png) 0 0 no-repeat;}
+.weather_fog_light{ position:absolute; bottom:15px; right:73px; z-index:10;.animation: active_liuxing 2s 2s ease both;-moz-animation: active_liuxing 2s 2s ease both;	-webkit-animation: active_liuxing 2s 2s ease both;	 -o-animation: active_liuxing 2s 2s ease both;}
+.weather_fog_light_content{ display:inline-block; width:200px; height:180px; background:url(../images/weather_fog/light.png) 0 0 no-repeat;.animation:dengta_light infinite step-start 3000ms;-moz-animation:dengta_light infinite step-start 3000ms;-webkit-animation:dengta_light infinite step-start 3000ms;-o-animation:dengta_light infinite step-start 3000ms;}
+.weather_fog_yun1{ position:absolute; bottom:270px; right:25px; z-index:10;.animation: active_liuxing 1s 3s ease both;-moz-animation: active_liuxing 1s 3s ease both;	-webkit-animation: active_liuxing 1s 3s ease both;	 -o-animation: active_liuxing 1s 3s ease both;}
+.weather_fog_yun1_content{ position:absolute; bottom:0px; right:0px;display:block; width:70px; height:35px; background:url(../images/weather_fog/fogyun2.png) 0 0 no-repeat;.animation:piaodong_fogyun1 10s linear infinite normal;-moz-animation:piaodong_fogyun1 10s linear infinite normal;-webkit-animation:piaodong_fogyun1 10s linear infinite normal;-o-animation:piaodong_fogyun1 10s linear infinite normal;}
+.weather_fog_yun2{ position:absolute; bottom:270px; right:85px; z-index:5;.animation: active_liuxing 2s 3s ease both;-moz-animation: active_liuxing 2s 3s ease both;	-webkit-animation: active_liuxing 2s 3s ease both;	 -o-animation: active_liuxing 2s 3s ease both;}
+.weather_fog_yun2_content{ position:absolute; bottom:0px; right:0px;display:block; width:50px; height:30px; background:url(../images/weather_fog/fogyun1.png) 0 0 no-repeat;.animation:piaodong_fogyun2 10s linear infinite normal;-moz-animation:piaodong_fogyun2 10s linear infinite normal;-webkit-animation:piaodong_fogyun2 10s linear infinite normal;-o-animation:piaodong_fogyun2 10s linear infinite normal;}
+.weather_fog_yun3{ position:absolute; bottom:280px; right:145px; z-index:10;.animation: active_liuxing 35s 3s ease both;-moz-animation: active_liuxing 3s 3s ease both;	-webkit-animation: active_liuxing 3s 3s ease both;	 -o-animation: active_liuxing 3s 3s ease both;}
+.weather_fog_yun3_content{ position:absolute; bottom:0px; right:0px;display:block; width:70px; height:35px; background:url(../images/weather_fog/fogyun2.png) 0 0 no-repeat;.animation:piaodong_fogyun3 15s linear infinite normal;-moz-animation:piaodong_fogyun3 15s linear infinite normal;-webkit-animation:piaodong_fogyun3 15s linear infinite normal;-o-animation:piaodong_fogyun3 15s linear infinite normal;}
+.weather_fog_taiyang{ position:absolute; bottom:270px; right:30px; z-index:8;.animation: active_fogtaiyang 1s 3.5s ease both;-moz-animation: active_fogtaiyang 1s 3.5s ease both;	-webkit-animation: active_fogtaiyang 1s 3.5s ease both;	 -o-animation: active_fogtaiyang 1s 3.5s ease both;}
+.weather_fog_taiyang_content{ display:inline-block; width:100px; height:70px; background:url(../images/weather_fog/sun.png) 0 0 no-repeat;.animation:yun_taiyang infinite step-start 1000ms;-moz-animation:yun_taiyang infinite step-start 1000ms;-webkit-animation:yun_taiyang infinite step-start 1000ms;-o-animation:yun_taiyang infinite step-start 1000ms;}
+.weather_fog_ghost1{ position:absolute; bottom:110px; right:270px; z-index:10;.animation: active_ghost1 0.5s 1s ease both;-moz-animation: active_ghost1 0.5s 1s ease both;	-webkit-animation: active_ghost1 0.5s 1s ease both;	 -o-animation: active_ghost1 0.5s 1s ease both;}
+.weather_fog_ghost1_content{position:absolute; bottom:0px; right:0px;display:block; width:58px; height:70px; background:url(../images/weather_fog/ghost.png) -42px 0 no-repeat;.animation:fuxian_ghost 15s linear infinite normal;-moz-animation:fuxian_ghost 15s linear infinite normal;-webkit-animation:fuxian_ghost 15s linear infinite normal;-o-animation:fuxian_ghost 15s linear infinite normal;}
+.weather_fog_ghost2{ position:absolute; bottom:100px; right:480px; z-index:10;.animation: active_ghost2 0.5s 1s ease both;-moz-animation: active_ghost2 0.5s 1s ease both;	-webkit-animation: active_ghost2 0.5s 1s ease both;	 -o-animation: active_ghost2 0.5s 1s ease both;}
+.weather_fog_ghost2_content{ position:absolute; bottom:0px; right:0px;display:block; width:42px; height:70px; background:url(../images/weather_fog/ghost.png) 0 0 no-repeat;.animation:fuxian_ghost 10s linear infinite normal;-moz-animation:fuxian_ghost 10s linear infinite normal;-webkit-animation:fuxian_ghost 10s linear infinite normal;-o-animation:fuxian_ghost 10s linear infinite normal;}
+
+@keyframes piaodong_fogleft{0%{ bottom:0px; right:0px;opacity:1;}25%{bottom:5px;right:-100px;opacity:0.6;}70%{bottom:0px;right:0px;opacity:1;}95%{bottom:-5px;right:10px;opacity:0.5;}100%{bottom:0px;right:0px;opacity:1;}}
+@-moz-keyframes piaodong_fogleft{0%{ bottom:0px; right:0px;opacity:1;}25%{bottom:5px;right:-100px;opacity:0.6;}70%{bottom:0px;right:0px;opacity:1;}95%{bottom:-5px;right:10px;opacity:0.5;}100%{bottom:0px;right:0px;opacity:1;}}
+@-webkit-keyframes piaodong_fogleft{0%{ bottom:0px; right:0px;opacity:1;}25%{bottom:5px;right:-100px;opacity:0.6;}70%{bottom:0px;right:0px;opacity:1;}95%{bottom:-5px;right:10px;opacity:0.5;}100%{bottom:0px;right:0px;opacity:1;}}
+
+@keyframes piaodong_fogright{0%{bottom:0px;right:0px;opacity:1;}35%{bottom:8px;right:100px;opacity:1;}80%{bottom:0px;right:0px;opacity:0.5;}95%{bottom:-3px;right:-10px;opacity:1;}100%{bottom:0px;right:0px;opacity:0.8;}}
+@-moz-keyframes piaodong_fogright{0%{bottom:0px;right:0px;opacity:1;}35%{bottom:8px;right:100px;opacity:1;}80%{bottom:0px;right:0px;opacity:0.5;}95%{bottom:-3px;right:-10px;opacity:1;}100%{bottom:0px;right:0px;opacity:0.8;}}
+@-webkit-keyframes piaodong_fogright{0%{bottom:0px;right:0px;opacity:1;}35%{bottom:8px;right:100px;opacity:1;}80%{bottom:0px;right:0px;opacity:0.5;}95%{bottom:-3px;right:-10px;opacity:1;}100%{bottom:0px;right:0px;opacity:0.8;}}
+
+@keyframes dengta_light {0% { background-position:0px 0px;opacity:0.6;}8% {background-position:-200px 0px;opacity:0.8;}16% { background-position:-400px 0px;opacity:1;}24% { background-position:-600px 0px;opacity:0.7;}32% { background-position:-600px 0px;opacity:0.9;}40% { background-position:-800px 0px;opacity:0.7;}48% { background-position:-1000px 0px;opacity:1;}56% { background-position:-1200px 0px;opacity:0.8;}64% { background-position:-1400px 0px;opacity:0.7;}72% { background-position:-1600px 0px;opacity:1;}80% { background-position:-1600px 0px;opacity:0.9;}88% { background-position:-1800px 0px;opacity:1;}92% { background-position:-2000px 0px;opacity:1;}100% { background-position:-2200px 0px;opacity:0.8;}}
+@-moz-keyframes dengta_light {0% { background-position:0px 0px;opacity:0.6;}8% {background-position:-200px 0px;opacity:0.8;}16% { background-position:-400px 0px;opacity:1;}24% { background-position:-600px 0px;opacity:0.7;}32% { background-position:-600px 0px;opacity:0.9;}40% { background-position:-800px 0px;opacity:0.7;}48% { background-position:-1000px 0px;opacity:1;}56% { background-position:-1200px 0px;opacity:0.8;}64% { background-position:-1400px 0px;opacity:0.7;}72% { background-position:-1600px 0px;opacity:1;}80% { background-position:-1600px 0px;opacity:0.9;}88% { background-position:-1800px 0px;opacity:1;}92% { background-position:-2000px 0px;opacity:1;}100% { background-position:-2200px 0px;opacity:0.8;}}
+@-webkit-keyframes dengta_light {0% { background-position:0px 0px;opacity:0.6;}8% {background-position:-200px 0px;opacity:0.8;}16% { background-position:-400px 0px;opacity:1;}24% { background-position:-600px 0px;opacity:0.7;}32% { background-position:-600px 0px;opacity:0.9;}40% { background-position:-800px 0px;opacity:0.7;}48% { background-position:-1000px 0px;opacity:1;}56% { background-position:-1200px 0px;opacity:0.8;}64% { background-position:-1400px 0px;opacity:0.7;}72% { background-position:-1600px 0px;opacity:1;}80% { background-position:-1600px 0px;opacity:0.9;}88% { background-position:-1800px 0px;opacity:1;}92% { background-position:-2000px 0px;opacity:1;}100% { background-position:-2200px 0px;opacity:0.8;}}
+
+@keyframes yaodong_hongqi {0% { background-position:0px 0px;}50% { background-position:-50px 0px;}100% { background-position:-100px 0px;}}
+@-moz-keyframes yaodong_hongqi {0% { background-position:0px 0px;}50% { background-position:-50px 0px;}100% { background-position:-100px 0px;}}
+@-webkit-keyframes yaodong_hongqi {0% { background-position:0px 0px;}50% { background-position:-50px 0px;}100% { background-position:-100px 0px;}}
+
+@keyframes yun_taiyang {0% { background-position:0px 0px;}20% { background-position:-100px 0px;}40% { background-position:-200px 0px;}60% { background-position:-300px 0px;}80% { background-position:-400px 0px;}100% { background-position:-500px 0px;}}
+@-moz-keyframes yun_taiyang {0% { background-position:0px 0px;}20% { background-position:-100px 0px;}40% { background-position:-200px 0px;}60% { background-position:-300px 0px;}80% { background-position:-400px 0px;}100% { background-position:-500px 0px;}}
+@-webkit-keyframes yun_taiyang {0% { background-position:0px 0px;}20% { background-position:-100px 0px;}40% { background-position:-200px 0px;}60% { background-position:-300px 0px;}80% { background-position:-400px 0px;}100% { background-position:-500px 0px;}}
+
+@keyframes fuxian_ghost {0% {opacity:0;bottom:0px;}50% {opacity:0;bottom:0px;}90% {opacity:0.8;bottom:0px;}100% {opacity:0;bottom:10px;}}
+@-moz-keyframes fuxian_ghost {0% {opacity:0;bottom:0px;}50% {opacity:0;bottom:0px;}90% {opacity:0.8;bottom:0px;}100% {opacity:0;bottom:10px;}}
+@-webkit-keyframes fuxian_ghost {0% {opacity:0;bottom:0px;}50% {opacity:0;bottom:0px;}90% {opacity:0.8;bottom:0px;}100% {opacity:0;bottom:10px;}}
+
+@keyframes piaodong_fogyun1{0%{ bottom:0px; right:0px;opacity:1;}25%{bottom:5px;right:10px;opacity:0.6;}70%{bottom:0px;right:0px;opacity:1;}95%{bottom:-5px;right:-10px;opacity:0.5;}100% {bottom:0px;right:0px;opacity:1;}}
+@-moz-keyframes piaodong_fogyun1{0%{ bottom:0px; right:0px;opacity:1;}25%{bottom:5px;right:10px;opacity:0.6;}70%{bottom:0px;right:0px;opacity:1;}95%{bottom:-5px;right:-10px;opacity:0.5;}100% {bottom:0px;right:0px;opacity:1;}}
+@-webkit-keyframes piaodong_fogyun1{0%{ bottom:0px; right:0px;opacity:1;}25%{bottom:5px;right:10px;opacity:0.6;}70%{bottom:0px;right:0px;opacity:1;}95%{bottom:-5px;right:-10px;opacity:0.5;}100% {bottom:0px;right:0px;opacity:1;}}
+
+@keyframes piaodong_fogyun2{0%{ bottom:0px; right:0px;opacity:1;}25%{bottom:5px;right:15px;opacity:0.6;}70%{bottom:0px;right:0px;opacity:1;}95%{bottom:-5px;right:10px;opacity:0.5;}100% {bottom:0px;right:0px;opacity:1;}}
+@-moz-keyframes piaodong_fogyun2{0%{ bottom:0px; right:0px;opacity:1;}25%{bottom:5px;right:15px;opacity:0.6;}70%{bottom:0px;right:0px;opacity:1;}95%{bottom:-5px;right:10px;opacity:0.5;}100% {bottom:0px;right:0px;opacity:1;}}
+@-webkit-keyframes piaodong_fogyun2{0%{ bottom:0px; right:0px;opacity:1;}25%{bottom:5px;right:15px;opacity:0.6;}70%{bottom:0px;right:0px;opacity:1;}95%{bottom:-5px;right:10px;opacity:0.5;}100% {bottom:0px;right:0px;opacity:1;}}
+
+@keyframes piaodong_fogyun3{0%{ bottom:0px; right:0px;opacity:1;}25%{bottom:5px;right:-30px;opacity:0.6;}70%{bottom:0px;right:0px;opacity:1;}95%{bottom:-5px;right:20px;opacity:0.5;}100%{bottom:0px;right:0px;opacity:1;}}
+@-moz-keyframes piaodong_fogyun3{0%{ bottom:0px; right:0px;opacity:1;}25%{bottom:5px;right:-30px;opacity:0.6;}70%{bottom:0px;right:0px;opacity:1;}95%{bottom:-5px;right:20px;opacity:0.5;}100%{bottom:0px;right:0px;opacity:1;}}
+@-webkit-keyframes piaodong_fogyun3{0%{ bottom:0px; right:0px;opacity:1;}25%{bottom:5px;right:-30px;opacity:0.6;}70%{bottom:0px;right:0px;opacity:1;}95%{bottom:-5px;right:20px;opacity:0.5;}100%{bottom:0px;right:0px;opacity:1;}}
+
+
+@keyframes active_fogleft{0%{ right:250px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {right:205px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-moz-keyframes active_fogleft {0% { right:250px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {right:205px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-webkit-keyframes active_fogleft {0% { right:250px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {right:205px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+
+@keyframes active_fogright{0% { right:-20px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {right:20px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-moz-keyframes active_fogright {0% { right:-20px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {right:20px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-webkit-keyframes active_fogright  {0% { right:-20px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {right:20px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+
+@keyframes active_dengta{0%{ bottom:30px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {bottom:70px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-moz-keyframes active_dengta {0% { bottom:30px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {bottom:70px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-webkit-keyframes active_dengta {0% { bottom:30px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}100% {bottom:70px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+
+@keyframes active_fogtaiyang{0%{ bottom:300px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}80% { bottom:260px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}100% {bottom:270px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-moz-keyframes active_fogtaiyang {0% { bottom:300px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}80%{ bottom:260px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}100% {bottom:270px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+@-webkit-keyframes active_fogtaiyang  {0% { bottom:300px;opacity:0;-moz-opacity:0;filter:alpha(opacity=100);}90%   { bottom:265px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}100% {bottom:270px;opacity:1;-moz-opacity:1;filter:alpha(opacity=0);}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

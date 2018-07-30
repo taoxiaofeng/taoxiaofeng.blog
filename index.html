@@ -1,13 +1,58 @@
---- layout: default title: 我的Blog ---
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="zh-CN" xml:lang="zh-CN">
 
-<h2>{{ page.title }}</h2>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>taoxiaofeng.blog</title>
 
-<p>最新文章</p>
+    <link href="css/chinaz.css" rel="stylesheet" type="text/css" />
 
-<ul>
-    {% for post in site.posts %}
-    <li>{{ post.date | date_to_string }}
-        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-    </li>
-    {% endfor %}
-</ul>
+</head>
+
+<body>
+
+    <div class="weather_cloudy_width">
+        <div class="shatan_width">
+            <div class="weather_cloudy_shatan">
+                <i class="weather_cloudy_shatan_content"></i>
+            </div>
+        </div>
+        <div class="weather_cloudy">
+            <div class="weather_cloudy_xiong">
+                <i class="weather_cloudy_xiong_content"></i>
+            </div>
+            <div class="weather_cloudy_shu">
+                <i class="weather_cloudy_shu_content"></i>
+            </div>
+            <div class="weather_cloudy_xiongyingzi">
+                <i class="weather_cloudy_xiongyingzi_content"></i>
+            </div>
+            <div class="weather_cloudy_shuye1">
+                <i class="weather_cloudy_shuye1_content"></i>
+            </div>
+            <div class="weather_cloudy_shuye2">
+                <i class="weather_cloudy_shuye2_content"></i>
+            </div>
+            <div class="weather_cloudy_yun1">
+                <i class="weather_cloudy_yun1_content"></i>
+            </div>
+            <div class="weather_cloudy_yun2">
+                <i class="weather_cloudy_yun2_content"></i>
+            </div>
+            <div class="weather_cloudy_yun3">
+                <i class="weather_cloudy_yun3_content"></i>
+            </div>
+            <div class="weather_cloudy_yun4">
+                <i class="weather_cloudy_yun4_content"></i>
+            </div>
+            <div class="weather_cloudy_taiyang">
+                <i class="weather_cloudy_taiyang_content"></i>
+            </div>
+            <div class="weather_cloudy_xiaoniao">
+                <i class="weather_cloudy_xiaoniao_content"></i>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
