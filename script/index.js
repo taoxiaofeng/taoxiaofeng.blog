@@ -1,60 +1,39 @@
-// jQuery is required to run this code
-$(document).ready(function () {
-    scaleVideoContainer();
+(function () {
 
-    initBannerVideoSize('.video-container .poster img');
-    initBannerVideoSize('.video-container .filter');
-    initBannerVideoSize('.video-container video');
+    var bv = new Bideo();
+    bv.init({
+        // Video element
+        videoEl: document.querySelector('#background_video'),
 
-    $(window).on('resize', function () {
-        scaleVideoContainer();
-        scaleBannerVideoSize('.video-container .poster img');
-        scaleBannerVideoSize('.video-container .filter');
-        scaleBannerVideoSize('.video-container video');
-    });
-});
+        // Container element
+        container: document.querySelector('body'),
 
-function scaleVideoContainer() {
-    var height = $(window).height() + 5;
-    var unitHeight = parseInt(height) + 'px';
-    $('.homepage-hero-module').css('height', unitHeight);
-}
+        // Resize
+        resize: true,
 
-function initBannerVideoSize(element) {
-    $(element).each(function () {
-        $(this).data('height', $(this).height());
-        $(this).data('width', $(this).width());
-    });
+        // autoplay: false,
 
-    scaleBannerVideoSize(element);
-}
+        isMobile: window.matchMedia('(max-width: 768px)').matches,
 
-function scaleBannerVideoSize(element) {
+        playButton: document.querySelector('#play'),
+        pauseButton: document.querySelector('#pause'),
 
-    var windowWidth = $(window).width(),
-        windowHeight = $(window).height() + 5,
-        videoWidth,
-        videoHeight;
+        // Array of objects containing the src and type
+        // of different video formats to add
+        src: [{
+                //src: '//media.html5media.info/video.mp4', //night.mp4  ////cloud.video.taobao.com/play/u/3245834217/p/1/e/6/t/1/50021244141.mp4
+                src: 'video/Dc.mp4',
+                type: 'video/mp4'
+            },
+            {
+                src: 'night.webm',
+                type: 'video/webm;codecs="vp8, vorbis"'
+            }
+        ],
 
-    // console.log(windowHeight);
-
-    $(element).each(function () {
-        var videoAspectRatio = $(this).data('height') / $(this).data('width');
-
-        $(this).width(windowWidth);
-
-        if (windowWidth < 1000) {
-            videoHeight = windowHeight;
-            videoWidth = videoHeight / videoAspectRatio;
-            $(this).css({
-                'margin-top': 0,
-                'margin-left': -(videoWidth - windowWidth) / 2 + 'px'
-            });
-
-            $(this).width(videoWidth).height(videoHeight);
+        // What to do once video loads (initial frame)
+        onLoad: function () {
+            document.querySelector('#video_cover').style.display = 'none';
         }
-
-        $('.homepage-hero-module .video-container video').addClass('fadeIn animated');
-
     });
-}
+}());

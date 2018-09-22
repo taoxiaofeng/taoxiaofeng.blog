@@ -1,143 +1,51 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="zh-CN" xml:lang="zh-CN">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>taoxiaofeng.blog</title>
-
-    <link rel="stylesheet" href="css/chinaz.css" type="text/css" />
-    <link rel="stylesheet" href="css/index.css" type="text/css">
-
-    <script src="script/jquery-3.3.1.min.js"></script>
-    <!-- <script src="script/index.js"></script> -->
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>追梦者</title>
+    <meta name="keywords" content="css3, html5, js, video">
+    <meta name="description" content="一个追梦者的博客">
+    <link rel="icon" href="dreams_favicon.ico" type="images/x-icon">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
+    <div id="container">
+        <video id="background_video" loop muted></video>
+        <div id="video_cover"></div>
+        <div id="overlay"></div>
 
-    <!-- <div class="weather_cloudy_width">
-        <div class="shatan_width">
-            <div class="weather_cloudy_shatan">
-                <i class="weather_cloudy_shatan_content"></i>
-                <div class="content">
-
-                </div>
-
-            </div>
+        <div id="video_controls">
+            <span id="play">
+                <img src="images/play.png">
+            </span>
+            <span id="pause">
+                <img src="images/pause.png">
+            </span>
         </div>
-        <div class="weather_cloudy">
-            <div class="weather_cloudy_xiong">
-                <i class="weather_cloudy_xiong_content"></i>
-            </div>
-            <div class="weather_cloudy_shu">
-                <i class="weather_cloudy_shu_content"></i>
-            </div>
-            <div class="weather_cloudy_xiongyingzi">
-                <i class="weather_cloudy_xiongyingzi_content"></i>
-            </div>
-            <div class="weather_cloudy_shuye1">
-                <i class="weather_cloudy_shuye1_content"></i>
-            </div>
-            <div class="weather_cloudy_shuye2">
-                <i class="weather_cloudy_shuye2_content"></i>
-            </div>
-            <div class="weather_cloudy_yun1">
-                <i class="weather_cloudy_yun1_content"></i>
-            </div>
-            <div class="weather_cloudy_yun2">
-                <i class="weather_cloudy_yun2_content"></i>
-            </div>
-            <div class="weather_cloudy_yun3">
-                <i class="weather_cloudy_yun3_content"></i>
-            </div>
-            <div class="weather_cloudy_yun4">
-                <i class="weather_cloudy_yun4_content"></i>
-            </div>
-            <div class="weather_cloudy_taiyang">
-                <i class="weather_cloudy_taiyang_content"></i>
-            </div>
-            <div class="weather_cloudy_xiaoniao">
-                <i class="weather_cloudy_xiaoniao_content"></i>
-            </div>
-        </div>
-    </div> -->
 
-
-    <div class="homepage-hero-module">
-        <div class="video-container">
-            <div class="filter"></div>
-            <video autoplay loop class="fillWidth">
-                <source src="video/The-strip.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
-                <source src="video/The-strip.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
-            </video>
-            <div class="poster hidden">
-                <img src="video/The-strip.jpg" alt="">
+        <section id="main_content">
+            <div id="head">
+                <h1>生活不止眼前的苟且</h1>
+                <p class="sub_head">还有诗和远方的田野</p>
+                <p class="info">你赤手空拳来到人世间，为找到那片海不顾一切</p>
             </div>
-        </div>
+            <div id="links">
+                <a href="view/template-one.html">仗剑走天涯</a>
+            </div>
+        </section>
     </div>
 
-    <script type="text/javascript">
-        // jQuery is required to run this code
-        $(document).ready(function () {
-            scaleVideoContainer();
+    <div id="footer">
+        <a>资源均来源于网络，如涉及到侵权请告知，秒删。</a>
+        <a href="https://taoxiaofeng.github.io/taoxiaofeng.blog/">博客地址</a>
+    </div>
 
-            initBannerVideoSize('.video-container .poster img');
-            initBannerVideoSize('.video-container .filter');
-            initBannerVideoSize('.video-container video');
-
-            $(window).on('resize', function () {
-                scaleVideoContainer();
-                scaleBannerVideoSize('.video-container .poster img');
-                scaleBannerVideoSize('.video-container .filter');
-                scaleBannerVideoSize('.video-container video');
-            });
-        });
-
-        function scaleVideoContainer() {
-            var height = $(window).height() + 5;
-            var unitHeight = parseInt(height) + 'px';
-            $('.homepage-hero-module').css('height', unitHeight);
-        }
-
-        function initBannerVideoSize(element) {
-            $(element).each(function () {
-                $(this).data('height', $(this).height());
-                $(this).data('width', $(this).width());
-            });
-
-            scaleBannerVideoSize(element);
-        }
-
-        function scaleBannerVideoSize(element) {
-
-            var windowWidth = $(window).width(),
-                windowHeight = $(window).height() + 5,
-                videoWidth,
-                videoHeight;
-
-            // console.log(windowHeight);
-
-            $(element).each(function () {
-                var videoAspectRatio = $(this).data('height') / $(this).data('width');
-
-                $(this).width(windowWidth);
-
-                if (windowWidth < 1000) {
-                    videoHeight = windowHeight;
-                    videoWidth = videoHeight / videoAspectRatio;
-                    $(this).css({
-                        'margin-top': 0,
-                        'margin-left': -(videoWidth - windowWidth) / 2 + 'px'
-                    });
-
-                    $(this).width(videoWidth).height(videoHeight);
-                }
-
-                $('.homepage-hero-module .video-container video').addClass('fadeIn animated');
-
-            });
-        }
-    </script>
+    <script src="./script/bideo.js"></script>
+    <script src="./script/index.js"></script>
 
 </body>
 
