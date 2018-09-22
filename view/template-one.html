@@ -1,3 +1,332 @@
-<div>
-    <h1>开始</h1>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>模板一</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        .content-body-header {
+            position: relative;
+            overflow: hidden;
+            width: 700px;
+            height: 150px;
+            border: 1px solid #D9D9D9;
+            box-shadow: 2px 2px 3px 4px rgba(0, 0, 0, .1);
+        }
+
+        .container {
+            min-width: 1024px;
+            margin: 0 auto;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: #D9D9D9;
+        }
+
+        .box {
+            text-align: center;
+            line-height: 60px;
+            display: flex;
+            flex: 1 1 0;
+            flex-direction: column;
+        }
+
+        .header {
+            width: 100%;
+            height: 60px;
+            background: orange;
+        }
+
+        .content {
+            position: relative;
+            width: 700px;
+            margin: 0 auto;
+        }
+
+        .content-body {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: olive;
+        }
+
+        .content-body-heade {
+            position: relative;
+            overflow: hidden;
+            width: 700px;
+            height: 150px;
+            border: 3px solid #333;
+        }
+
+        #list {
+            position: absolute;
+            z-index: 1;
+            width: 4900px;
+            height: 150px;
+        }
+
+        #list img {
+            float: left;
+            width: 700px;
+            height: 150px;
+            ;
+        }
+
+        #buttons {
+            position: absolute;
+            z-index: 2;
+            bottom: 20px;
+            left: 250px;
+            width: 100px;
+            height: 10px;
+        }
+
+        #buttons span {
+            float: left;
+            width: 10px;
+            height: 10px;
+            margin-right: 5px;
+
+            cursor: pointer;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            background: #333;
+        }
+
+        #buttons .on {
+            background: orangered;
+        }
+
+        .arrow {
+            font-size: 36px;
+            font-weight: bold;
+            line-height: 39px;
+            position: absolute;
+            z-index: 2;
+            top: 180px;
+            display: none;
+            width: 40px;
+            height: 40px;
+
+            cursor: pointer;
+            text-align: center;
+            color: #fff;
+            background-color: RGBA(0, 0, 0, .3);
+        }
+
+        .arrow:hover {
+            background-color: RGBA(0, 0, 0, .7);
+        }
+
+        .content-body-heade:hover .arrow {
+            display: block;
+        }
+
+        #prev {
+            left: 20px;
+        }
+
+        #next {
+            right: 20px;
+        }
+
+        .content-footer {
+            position: relative;
+            height: 60px;
+            background: orangered;
+            width: 100%;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            // body... 
+            var prev = document.getElementById("prev");
+            var next = document.getElementById("next");
+            var list = document.getElementById("list");
+            var buttons = document.getElementById("buttons").getElementsByTagName("span");
+            var slideshow = document.getElementById("slideshow");
+            var index = 1;
+            var timer;
+            var animated = false;
+
+            function shownButton() {
+                for (var i = 0; i < buttons.length; i++) {
+                    if (buttons[i].className == 'on') {
+                        buttons[i].className = '';
+                        /* prev和next每click一次，
+                         就会清除一次前一个class为on的span元素，
+                         所以没有必要再去循环下面的span*/
+                        break;
+                    }
+                    //  或者直接遍历清除  buttons[i].className=""；
+                }
+                buttons[index - 1].className = "on";
+            }
+
+            function animate(offset) {
+                var time = 350;
+                var inteval = 10;
+                var speed = offset / (time / inteval);
+                console.log('offset', offset, 'time', time, 'inteval', inteval, 'speed', speed);
+                animated = true;
+                var newLeft = parseInt(list.style.left) + offset;
+
+                function go() {
+                    if ((speed > 0 && parseInt(list.style.left) < newLeft) || (speed < 0 && parseInt(list.style.left) >
+                            newLeft)) {
+                        list.style.left = parseInt(list.style.left) + speed + 'px';
+                        setTimeout(go, inteval);
+                    } else {
+
+                        animated = false;
+                        // list.style.left=newLeft+"px";
+                        if (newLeft > -700) {
+                            list.style.left = -3000 + "px";
+                        };
+                        if (newLeft < -3000) {
+                            list.style.left = -700 + "px";
+                        };
+                    }
+                }
+                go();
+            };
+
+            prev.onclick = function () {
+                /*添加一个if判断index为1时，如果继续往前滚的话就让index返回第五个span
+                但是当快速点击arrow时会出现一种span点亮延迟的情况。可以尝试把判断index是否大于1或小于5的情况放进
+                判断是否animated的if语句中，先判断能不能点击，再点亮。
+                */
+                if (!animated) {
+                    if (index == 1) {
+                        index = 5;
+                    } else {
+                        index -= 1;
+                    }
+
+                    shownButton();
+                    animate(700);
+                }
+
+
+            };
+            next.onclick = function () {
+
+
+
+                if (!animated) {
+                    if (index == 5) {
+                        index = 1;
+                    } else {
+                        index += 1;
+                    }
+                    shownButton();
+                    animate(-700);
+                }
+            };
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].onclick = function () {
+                    //无关紧要
+                    if (this.className == "on") {
+                        return;
+                    }
+                    var myIndex = parseInt(this.getAttribute("index"));
+                    var offset = -700 * (myIndex - index);
+                    if (!animated) {
+                        animate(offset);
+                    }
+                    index = myIndex;
+                    shownButton();
+
+                }
+            }
+
+            function play() {
+                timer = setInterval(function () {
+                    next.onclick();
+                }, 2000);
+            }
+
+            function stop() {
+                clearInterval(timer);
+            }
+            play();
+            slideshow.onmouseover = stop;
+            slideshow.onmouseout = play;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <header class="header"></header>
+            <div class="content">
+                <div class="content-body">
+                    <div class="content-body-header" id="slideshow">
+                        <div id="list" style="left: -700px;">
+                            <img src="../images/banner/banner05.jpg" alt="1" />
+                            <img src="../images/banner/banner01.jpg" alt="1" />
+                            <img src="../images/banner/banner02.jpg" alt="2" />
+                            <img src="../images/banner/banner03.jpg" alt="3" />
+                            <img src="../images/banner/banner04.jpg" alt="4" />
+                            <img src="../images/banner/banner05.jpg" alt="5" />
+                            <img src="../images/banner/banner01.jpg" alt="5" />
+                        </div>
+                        <div id="buttons">
+                            <span index="1" class="on"></span>
+                            <span index="2"></span>
+                            <span index="3"></span>
+                            <span index="4"></span>
+                            <span index="5"></span>
+                        </div>
+                        <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+                        <a href="javascript:;" id="next" class="arrow">&gt;</a>
+                    </div>
+                    <div class="content-body-min">
+                        <ul>
+                            <li>
+                                <div>
+                                    <div class="title">
+                                        <h1>这里是文章标题</h1>
+                                    </div>
+                                    <div class="introduction">
+                                        <p>这里是文章的介绍内容</p>
+                                    </div>
+                                    <div>
+                                        <p>这里是预留空间</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="content-body-footer"></div>
+                </div>
+                <div class="content-footer"></div>
+            </div>
+            <footer class="footer"></footer>
+        </div>
+    </div>
+
+</body>
+
+</html>
