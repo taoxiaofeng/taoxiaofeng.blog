@@ -114,6 +114,17 @@ body {
     border-radius: 10px;
 }
 
+.min_head .avatar {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-image: url('../images/daisies.png');
+    background-repeat: no-repeat;
+    background-size: 80px 80px;
+    filter: opacity(50%);
+}
+
 .navigation_menu {
     display: flex;
     list-style-type: none;
@@ -159,20 +170,17 @@ body {
     color: #fff;
 }
 
-#footer a {
+#footer span {
     color: rgba(255, 255, 255, 0.5);
-    text-decoration: none;
-    margin: 10px;
     font-size: 12px;
+    vertical-align: -10px;
+    width: 100%;
 }
 
-#footer a:first-child {
-    float: left;
-}
-
-#footer a:last-child {
+#footer b {
+    cursor: pointer;
     float: right;
-    text-align: right;
+    padding-top: 10px;
 }
 
 .ad_76090 {

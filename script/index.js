@@ -36,4 +36,15 @@
             document.querySelector('#video_cover').style.display = 'none';
         }
     });
+
+    //动态设置 当天时间
+    var date = new Date();
+    var Y = date.getFullYear() + '',
+        M = date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1 + '',
+        D = date.getDate() + '';
+    document.getElementById('current-time').innerHTML = Y + M + D;
 }());
+
+function gotoBlog() {
+    window.open('https://taoxiaofeng.github.io/taoxiaofeng.blog/', '_self');
+};
