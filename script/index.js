@@ -41,7 +41,7 @@
     var date = new Date();
     var Y = date.getFullYear() + '',
         M = date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1 + '',
-        D = date.getDate() + '';
+        D = date.getDate() + 1 < 10 ?'0' + date.getDate() : date.getDate() + '';
     document.getElementById('current-time').innerHTML = Y + M + D;
 }());
 
