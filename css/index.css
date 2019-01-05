@@ -214,3 +214,7 @@ body {
         text-align: center
     }
 }
+
+.anticon {
+    cursor: pointer;
+}
