@@ -11,6 +11,12 @@
     <link rel="icon" href="dreams_favicon.ico" type="images/x-icon">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/iconfont.css">
+    <!-- <link rel="stylesheet" href="./css/bootstrap.min.css"> -->
+    <!-- 工具包 -->
+    <script src="./script/jquery-3.4.1.js"></script>
+    <script src="./util/drag.js"></script>
+    <!-- <script src="./script/popper.min.js"></script>
+    <script src="./script//bootstrap.min.js"></script> -->
 </head>
 
 <body>
@@ -35,13 +41,13 @@
                 </div>
                 <div class="menu">
                     <ul class="navigation_menu">
-                        <li class="anticon icon-github"></li>
+                        <li class="anticon icon-github" onclick="openGithub()"></li>
                         <li class="anticon icon-QQ"></li>
                         <li class="anticon icon-wechat"></li>
                         <li class="anticon icon-weibo"></li>
                         <li class="anticon icon-mail"></li>
                         <li class="anticon icon-phone"></li>
-                        <li class="anticon icon-profile">
+                        <li class="anticon icon-profile" onclick="openArticleModal()">
                             <a href="./view/template-one/template-one.html"></a>
                         </li>
                         <li class="anticon icon-solution1"></li>
@@ -52,6 +58,10 @@
                 <a href="view/template-one/template-one.html">仗剑走天涯</a>
             </div> -->
         </section>
+
+        <div class="github-modal">
+    
+        </div>
     </div>
 
     <footer id="footer">
@@ -63,8 +73,15 @@
         </div>
     </footer>
 
+    <!-- 遮罩层 -->
+    <div class="shade" id="shade">
+
+    </div>
+    <!-- 自己写的 -->
     <script src="./script/bideo.js"></script>
     <script src="./script/index.js"></script>
+    <script src="./view/github-modal/github-modal.js"></script>
+    <script src="./view/article-modal/article-modal.js"></script>
 
 </body>
 

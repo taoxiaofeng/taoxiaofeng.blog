@@ -91,14 +91,13 @@ body {
     position: relative;
     display: inline-block;
 
-    /* Vertical center */
-    top: 50%;
-    transform: translateY(-50%);
+    width: 100%;
+    height: 100%;
 }
 
 #main_content .menu {
     position: absolute;
-    left: calc(50% - 166px);
+    left: calc(50% - 177px);
     bottom: calc(50% - 80px);
     border-radius: 10px;
     z-index: 1;
@@ -109,9 +108,13 @@ body {
     height: 200px;
     background: rgba(255, 255, 255, 0.2);
     position: absolute;
-    left: calc(50% - 200px);
-    top: calc(50% - 100px);
     border-radius: 10px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
 }
 
 .min_head .avatar {
@@ -138,10 +141,13 @@ body {
     transition: font-size 0.25s ease-out 0s;
     -webkit-transition: font-size 0.25s ease-out 0s;
     -moz-transition: font-size 0.25s ease-out 0s;
+    text-align: center;
+    line-height: 2.27;
 }
 
 .navigation_menu li:hover {
     font-size: 44px;
+    line-height: 1.13;
 }
 
 #links {
@@ -168,6 +174,7 @@ body {
     left: 0;
     right: 0;
     color: #fff;
+    text-align: center;
 }
 
 #footer span {
@@ -217,4 +224,119 @@ body {
 
 .anticon {
     cursor: pointer;
+}
+
+.shade {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    z-index: 99;
+    justify-content: center;
+    align-items: center;
+}
+
+/** 模态框 样式**/
+
+.modal-head {
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #D9D9D9;
+}
+.github-modal {
+    width: 366px;
+    height: 200px;
+    background: #fff;
+    border-radius: 4px;
+    position: absolute;
+}
+
+.article-modal {
+    width: 566px;
+    height: 366px;
+    background: #fff;
+    border-radius: 4px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+
+.article-modal .modal-body {
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.article-modal .modal-body > div {
+    border: 1px solid #D9D9D9;
+}
+
+.article-modal .article-category {
+    flex: 1;
+    margin-right: 5px;
+}
+
+.article-modal .article-preview {
+    flex: 3;
+}
+
+.article-category ul {
+    padding: 10px;
+}
+
+.article-category li {
+    padding: 10px;
+    list-style: none;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.article-category li:hover {
+    color: #FFF;
+    background: #225fe4;
+    opacity: .3;
+}
+
+.modal-body {
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex: 1 1 0;
+}
+
+.modal-body .modal-title {
+    width: 66px;
+    padding: 5px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-body video {
+    width: 270px;
+    height: 150px;
+    border-radius: 10px;
+    margin: 5px;
+    outline: none;
+}
+
+.modal-close {
+    width: 29px;
+    height: 29px;
+    text-align: center;
+    line-height: 1.8;
+    border-radius: 50%;
+    background: #d9d9d9;
+    opacity: .6;
+}
+
+.modal-close:hover {
+    color: #FFF;
+    background: rgb(253, 30, 30);
 }
