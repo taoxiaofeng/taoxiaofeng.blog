@@ -20,9 +20,9 @@ function createGithubModal() {
         <div class="modal-body">
             <div class="modal-title">
                 <span>欢迎您</span>
-                <a href="https://taoxiaofeng.github.io/taoxiaofeng.blog/">点击打开浏览博客首页</a>
+                <a href="https://taoxiaofeng.github.io/taoxiaofeng.blog/">https://taoxiaofeng.github.io/taoxiaofeng.blog</a>
             </div>
-            <video src="video/xingkong.mp4" controls="controls"></video>
+            <!--<video src="video/xingkong.mp4" controls="controls"></video>-->
         </div>
     <div>`
 }
