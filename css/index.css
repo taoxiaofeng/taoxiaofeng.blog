@@ -1,80 +1,60 @@
 * {
     margin: 0;
-    padding: 0;
+    padding: 0
 }
 
-html,
-body {
+body,
+html {
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow: hidden
+}
+
+body {
+    position: relative;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 14px;
+    line-height: 2;
+    color: #555;
+    background: #fff;
+    text-align: center
+}
+
+li {
+    list-style: none
+}
+
+.flex {
+    display: flex
+}
+
+.flex-1 {
+    flex: 1 1 0
+}
+
+.flex-column {
+    flex-flow: column
 }
 
 #container {
+    height: 100%;
     overflow: hidden;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 0
 }
 
-#background_video {
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-}
-
-#video_cover {
-    position: absolute;
-
-    width: 100%;
-    height: 100%;
-
-    background-image: url('video/Dc.jpg') no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-#video_controls {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-
-#play img {
-    width: 100px;
-}
-
-#pause img {
-    width: 90px;
-}
-
-#pause {
-    display: none;
-}
-
-@media (min-width: 768px) {
-    #video_controls {
-        display: none;
-    }
-}
-
-/* Demo page specific styles */
-
-body {
-    text-align: center;
-    font-family: 'proxima-nova', Helvetica;
+.header-box {
+    height: 80px;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 3px 6px 0 rgba(92, 142, 247, .2)
 }
 
 #container {
-    height: 100%;
+    height: 100%
 }
 
 #overlay {
@@ -83,90 +63,122 @@ body {
     right: 0;
     left: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.01);
+    background: rgba(255, 255, 255, .01)
 }
 
-#main_content {
-    z-index: 2;
-    position: relative;
-    display: inline-block;
+.main-content {
+    height: calc(100% - 80px)
+}
 
-    width: 100%;
+.main-content .main-left {
+    width: 220px;
     height: 100%;
+    box-shadow: 4px 4px 6px 0 rgba(40, 50, 57, .1)
 }
 
-#main_content .menu {
-    position: absolute;
-    left: calc(50% - 177px);
-    bottom: calc(50% - 80px);
-    border-radius: 10px;
+.main-content .main-right {
+    margin: 10px;
+    background: #f5f8fd
+}
+
+.main-left .menu {
+    height: 102px;
     z-index: 1;
+    align-items: center;
+    justify-content: center
 }
 
-.min_head {
-    width: 400px;
-    height: 200px;
-    background: rgba(255, 255, 255, 0.2);
-    position: absolute;
-    border-radius: 10px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
+.main-left .menu:hover {
+    color: #108ee9
 }
 
-.min_head .avatar {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto;
+.main-left.expend {
+    margin-left: 0;
+    opacity: 1;
+    transition: all .3s cubic-bezier(.42, 0, .58, 1)
+}
+
+.main-left.collapse {
+    margin-left: -220px;
+    opacity: 0;
+    transition: all .3s cubic-bezier(.42, 0, .58, 1)
+}
+
+.header-box .avatar {
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    background-image: url('../images/daisies.png');
+    background-image: url(../images/daisies.png);
     background-repeat: no-repeat;
-    background-size: 80px 80px;
-    filter: opacity(50%);
+    background-size: 80px 80px
 }
 
-.navigation_menu {
-    display: flex;
-    list-style-type: none;
+.header-box .avatar:hover {
+    filter: opacity(50%)
 }
 
-.navigation_menu li {
+.header-box .shrink-box {
+    width: 220px;
+    height: 100%;
+    font-size: 18px;
+    align-items: center;
+    justify-content: center
+}
+
+.header-box .shrink-box:active,
+.header-box .shrink-box:focus,
+.header-box .shrink-box:hover {
+    color: #5c8ef7;
+    background: #f6f8fa
+}
+
+.navigation-menu li,
+.navigation-menu-two li {
     width: 44px;
     height: 50px;
     font-size: 22px;
-    color: rgb(51, 51, 51);
-    transition: font-size 0.25s ease-out 0s;
-    -webkit-transition: font-size 0.25s ease-out 0s;
-    -moz-transition: font-size 0.25s ease-out 0s;
+    color: #555;
+    transition: font-size .25s ease-out 0s;
+    -webkit-transition: font-size .25s ease-out 0s;
+    -moz-transition: font-size .25s ease-out 0s;
     text-align: center;
-    line-height: 2.27;
+    line-height: 2.27
 }
 
-.navigation_menu li:hover {
+.navigation-menu li:hover,
+.navigation-menu-two li:hover {
     font-size: 44px;
-    line-height: 1.13;
+    line-height: 1.13
+}
+
+.main-left-content>ul>li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px
+}
+
+.main-left-content>ul>li:hover {
+    color: #108ee9
 }
 
 #links {
-    margin-top: 20px;
+    margin-top: 20px
 }
 
 #links a {
-    border: 2px solid rgba(255, 255, 255, 0.20);
+    border: 2px solid rgba(255, 255, 255, .2);
     border-radius: 61px;
     font-size: 12px;
-    color: #FFFFFF;
+    color: #fff;
     letter-spacing: 1px;
     text-decoration: none;
     text-transform: uppercase;
     padding: 10px 25px;
     display: inline-block;
-    margin-right: 15px;
+    margin-right: 15px
 }
-
 
 #footer {
     position: absolute;
@@ -174,62 +186,40 @@ body {
     left: 0;
     right: 0;
     color: #fff;
-    text-align: center;
+    text-align: center
 }
 
 #footer span {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, .5);
     font-size: 12px;
     vertical-align: -10px;
-    width: 100%;
+    width: 100%
 }
 
 #footer b {
     cursor: pointer;
     float: right;
-    padding-top: 10px;
+    padding-top: 10px
 }
 
 .ad_76090 {
     width: 760px;
     height: 90px;
-    margin: 0 auto;
+    margin: 0 auto
 }
 
 .hidden {
     display: none
 }
 
-@media screen and (min-width: 320px) and (max-width : 480px) {
-    #main_content {
-        top: 60%;
-    }
-
-    #main_content h1 {
-        font-size: 1.2rem
-    }
-
-    html {
-        -webkit-text-size-adjust: none;
-    }
-
-    .ad_76090,
-    .ad_demo {
-        width: 100%;
-        height: auto;
-        margin: 20px auto;
-        text-align: center
-    }
-}
-
 .anticon {
-    cursor: pointer;
+    cursor: pointer
 }
 
 .shade {
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, .5);
     position: fixed;
     top: 0;
     right: 0;
@@ -238,16 +228,14 @@ body {
     display: none;
     z-index: 99;
     justify-content: center;
-    align-items: center;
+    align-items: center
 }
-
-/** 模态框 样式**/
 
 .modal-head {
     padding: 5px 10px;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #D9D9D9;
+    border-bottom: 1px solid #d9d9d9
 }
 
 .github-modal {
@@ -255,7 +243,7 @@ body {
     height: 200px;
     background: #fff;
     border-radius: 4px;
-    position: absolute;
+    position: absolute
 }
 
 .article-modal {
@@ -265,54 +253,54 @@ body {
     border-radius: 4px;
     position: absolute;
     display: flex;
-    flex-direction: column;
+    flex-direction: column
 }
 
 .article-modal .modal-body {
     padding: 10px;
-    justify-content: space-between;
+    justify-content: space-between
 }
 
 .article-modal .modal-body>div {
-    border: 1px solid #D9D9D9;
+    border: 1px solid #d9d9d9
 }
 
 .article-modal .article-category {
     flex: 1;
-    margin-right: 5px;
+    margin-right: 5px
 }
 
 .article-modal .article-preview {
-    flex: 3;
+    flex: 3
 }
 
 .article-category ul {
-    padding: 10px;
+    padding: 10px
 }
 
 .article-category li {
     padding: 10px;
     list-style: none;
-    border-bottom: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9
 }
 
 .article-category li:hover {
-    color: #FFF;
+    color: #fff;
     background: #225fe4;
-    opacity: .3;
+    opacity: .3
 }
 
 .modal-body {
     padding: 0;
     text-align: center;
     display: flex;
-    flex: 1 1 0;
+    flex: 1 1 0
 }
 
 .modal-body .modal-title {
     padding: 5px;
     font-size: 16px;
-    text-align: center;
+    text-align: center
 }
 
 .modal-body video {
@@ -320,7 +308,7 @@ body {
     height: 150px;
     border-radius: 10px;
     margin: 5px;
-    outline: none;
+    outline: 0
 }
 
 .modal-close {
@@ -330,10 +318,10 @@ body {
     line-height: 1.8;
     border-radius: 50%;
     background: #d9d9d9;
-    opacity: .6;
+    opacity: .6
 }
 
 .modal-close:hover {
-    color: #FFF;
-    background: rgb(253, 30, 30);
+    color: #fff;
+    background: #fd1e1e
 }

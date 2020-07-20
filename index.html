@@ -10,7 +10,8 @@
     <meta name="description" content="一个追梦者的博客">
     <link rel="icon" href="dreams_favicon.ico" type="images/x-icon">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" type="text/css" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="fonts/iconfont.css">
     <!-- <link rel="stylesheet" href="./css/bootstrap.min.css"> -->
     <!-- 工具包 -->
     <script src="./script/jquery-3.4.1.js"></script>
@@ -21,7 +22,7 @@
 
 <body>
     <div id="container">
-        <video id="background_video" loop muted></video>
+        <!-- <video id="background_video" loop muted></video>
         <div id="video_cover"></div>
         <div id="overlay"></div>
 
@@ -32,19 +33,51 @@
             <span id="pause">
                 <img src="images/pause.png">
             </span>
+        </div> -->
+        <!-- 顶部导航栏 -->
+        <div class="header-box flex">
+            <div class="shrink-box flex" id="shrink-box">
+                <span class="iconfont icon-list"></span>
+            </div>
+            <div class="avatar">
+
+            </div>
         </div>
-
-        <section id="main_content">
-            <div id="head" class="min_head">
-                <div class="avatar">
-
+        <!-- 页面主体内容 -->
+        <div class="main-content flex">
+            <div class="main-left expend flex flex-column">
+                <div class="main-left-content flex-1">
+                    <ul>
+                        <li>
+                            <span class="iconfont icon-home"></span>
+                            <span>首页展示</span>
+                        </li>
+                        <li>
+                            <span class="iconfont icon-tags"></span>
+                            <span>前端技术</span>
+                        </li>
+                        <li>
+                            <span class="iconfont icon-operation"></span>
+                            <span>前端作品</span>
+                        </li>
+                        <li>
+                            <span class="iconfont icon-progress"></span>
+                            <span>前端文章</span>
+                        </li>
+                        <li>
+                            <span class="iconfont icon-link"></span>
+                            <span>友情链接</span>
+                        </li>
+                    </ul>
                 </div>
-                <div class="menu">
-                    <ul class="navigation_menu">
+                <div class="menu flex flex-column">
+                    <ul class="navigation-menu flex">
                         <li class="anticon icon-github" onclick="openGithub()"></li>
                         <li class="anticon icon-QQ"></li>
                         <li class="anticon icon-wechat"></li>
                         <li class="anticon icon-weibo"></li>
+                    </ul>
+                    <ul class="navigation-menu-two flex">
                         <li class="anticon icon-mail"></li>
                         <li class="anticon icon-phone"></li>
                         <li class="anticon icon-profile" onclick="openArticleModal()">
@@ -54,14 +87,19 @@
                     </ul>
                 </div>
             </div>
-            <!-- <div id="links">
-                <a href="view/template-one/template-one.html">仗剑走天涯</a>
-            </div> -->
-        </section>
-
-        <div class="github-modal">
-    
+            <div class="main-right flex-1">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </div>
+
+        <!-- <div class="github-modal">
+
+        </div> -->
     </div>
 
     <footer id="footer">
@@ -78,7 +116,7 @@
 
     </div>
     <!-- 自己写的 -->
-    <script src="./script/bideo.js"></script>
+    <!-- <script src="./script/bideo.js"></script> -->
     <script src="./script/index.js"></script>
     <script src="./view/github-modal/github-modal.js"></script>
     <script src="./view/article-modal/article-modal.js"></script>
