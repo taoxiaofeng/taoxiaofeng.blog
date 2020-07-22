@@ -16,29 +16,18 @@
     <!-- 工具包 -->
     <script src="./script/jquery-3.4.1.js"></script>
     <script src="./util/drag.js"></script>
+    <script src="./util/ripple.js"></script>
     <!-- <script src="./script/popper.min.js"></script>
     <script src="./script//bootstrap.min.js"></script> -->
 </head>
 
 <body>
     <div id="container">
-        <!-- <video id="background_video" loop muted></video>
-        <div id="video_cover"></div>
-        <div id="overlay"></div>
-
-        <div id="video_controls">
-            <span id="play">
-                <img src="images/play.png">
-            </span>
-            <span id="pause">
-                <img src="images/pause.png">
-            </span>
-        </div> -->
         <!-- 顶部导航栏 -->
         <div class="header-box flex">
-            <div class="shrink-box flex" id="shrink-box">
+            <button data-ripple class="shrink-box flex" id="shrink-box">
                 <span class="iconfont icon-list"></span>
-            </div>
+            </button>
             <div class="avatar">
 
             </div>

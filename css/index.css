@@ -122,7 +122,10 @@ li {
     height: 100%;
     font-size: 18px;
     align-items: center;
-    justify-content: center
+    justify-content: center;
+    background-color: #fff;
+    outline: none;
+    border: none;
 }
 
 .header-box .shrink-box:active,
@@ -324,4 +327,27 @@ li {
 .modal-close:hover {
     color: #fff;
     background: #fd1e1e
+}
+
+
+/***************** ripple ********************/
+
+.ripple-container {}
+
+.ripple-container .ripple {
+    background-color: #fff;
+    animation: ripple 2s forwards cubic-bezier(0, 0, 0.2, 1);
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    80% {
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+    }
 }
